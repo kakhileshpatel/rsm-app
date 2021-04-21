@@ -1,0 +1,2063 @@
+	<!doctype html>
+<html lang="en" prefix="og: http://ogp.me/ns#" class="no-js fonts-loading">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-08117103be773d6204a",applicationID:"572418288"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(7),c=e(8),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(9);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e){return!(!e||!e.protocol||"file:"===e.protocol)}t.exports=r},{}],4:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(6),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],5:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],6:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],7:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],8:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],9:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?u(e,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){e&&a&&e(n,r,i);for(var c=t(i),f=v(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[h[n]];return p&&p.push([b,n,r,c]),c}}function o(e,t){y[e]=v(e).concat(t)}function m(e,t){var n=y[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return y[e]||[]}function g(e){return p[e]=p[e]||i(n)}function w(e,t){s(e,function(e,n){t=t||"feature",h[n]=t,t in d||(d[t]=[])})}var y={},h={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:w,abort:c,aborted:!1};return b}function o(e){return u(e,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=e("gos"),s=e(7),d={},p={},l=t.exports=i();t.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=x.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+x.offset],null,"api"),c("timing",["load",n]);var r=l.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+x.offset],null,"api")}var a=e(2),c=e("handle"),f=e(7),u=e("ee"),s=e(5),d=e(3),p=window,l=p.document,m="addEventListener",v="attachEvent",g=p.XMLHttpRequest,w=g&&g.prototype;if(d(p.location)){NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:g,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1208.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:b,userAgent:s};e(1),e(4),l[m]?(l[m]("DOMContentLoaded",o,!1),p[m]("load",r,!1)):(l[v]("onreadystatechange",i),p[v]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0}},{}],"wrap-function":[function(e,t,n){function r(e,t){function n(t,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],e)}c(n+"start",[o,a,f],s,u);try{return p=t.apply(a,o)}catch(m){throw c(n+"err",[o,a,m],s,u),m}finally{c(n+"end",[o,a,p],s,u)}}return a(t)?t:(n||(n=""),nrWrapper[p]=t,o(t,nrWrapper,e),nrWrapper)}function r(e,t,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<t.length;u++)f=t[u],c=e[f],a(c)||(e[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!m||t){var c=m;m=!0;try{e.emit(n,r,o,t,a)}catch(f){i([f,n,r,o],e)}m=c}}return e||(e=s),n.inPlace=r,n.flag=p,n}function i(e,t){t||(t=s);try{t.emit("internal-error",e)}catch(n){}}function o(e,t,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(e);return r.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(o){i([o],n)}for(var a in e)l.call(e,a)&&(t[a]=e[a]);return t}function a(e){return!(e&&e instanceof Function&&e.apply&&!e[p])}function c(e,t){var n=t(e);return n[p]=e,o(e,n,s),n}function f(e,t,n){var r=e[t];e[t]=c(r,n)}function u(){for(var e=arguments.length,t=new Array(e),n=0;n<e;++n)t[n]=arguments[n];return t}var s=e("ee"),d=e(8),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;t.exports=r,t.exports.wrapFunction=c,t.exports.wrapInPlace=f,t.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script>
+        document.documentElement.classList.remove('no-js');
+        document.documentElement.classList.add('js');
+    </script>
+
+    <link rel="preload" href="https://www.trustedreviews.com/wp-content/uploads/sites/54/2019/08/trusted-reviews-logo-white-320x91.png" as="image">
+    <link rel="preconnect" href="https://www.trustedreviews.com" crossorigin>
+<link rel="preconnect" href="https://display.apester.com" crossorigin>
+<link rel="preconnect" href="https://player.apester.com" crossorigin>
+<link rel="preconnect" href="https://renderer.apester.com" crossorigin>
+<link rel="preconnect" href="https://static.apester.com" crossorigin>
+
+
+    <script type="text/javascript" id="inline-critical-fonts-js-js">
+!function(e){var t={};function n(o){if(t[o])return t[o].exports;var i=t[o]={i:o,l:!1,exports:{}};return e[o].call(i.exports,i,i.exports,n),i.l=!0,i.exports}n.m=e,n.c=t,n.d=function(e,t,o){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:o})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var o=Object.create(null);if(n.r(o),Object.defineProperty(o,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var i in e)n.d(o,i,function(t){return e[t]}.bind(null,i));return o},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=1)}([function(e,t,n){!function(){function t(e,t){document.addEventListener?e.addEventListener("scroll",t,!1):e.attachEvent("scroll",t)}function n(e){this.a=document.createElement("div"),this.a.setAttribute("aria-hidden","true"),this.a.appendChild(document.createTextNode(e)),this.b=document.createElement("span"),this.c=document.createElement("span"),this.h=document.createElement("span"),this.f=document.createElement("span"),this.g=-1,this.b.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;",this.c.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;",this.f.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;",this.h.style.cssText="display:inline-block;width:200%;height:200%;font-size:16px;max-width:none;",this.b.appendChild(this.h),this.c.appendChild(this.f),this.a.appendChild(this.b),this.a.appendChild(this.c)}function o(e,t){e.a.style.cssText="max-width:none;min-width:20px;min-height:20px;display:inline-block;overflow:hidden;position:absolute;width:auto;margin:0;padding:0;top:-999px;white-space:nowrap;font-synthesis:none;font:"+t+";"}function i(e){var t=e.a.offsetWidth,n=t+100;return e.f.style.width=n+"px",e.c.scrollLeft=n,e.b.scrollLeft=e.b.scrollWidth+100,e.g!==t&&(e.g=t,!0)}function s(e,n){function o(){var e=s;i(e)&&e.a.parentNode&&n(e.g)}var s=e;t(e.b,o),t(e.c,o),i(e)}function a(e,t){var n=t||{};this.family=e,this.style=n.style||"normal",this.weight=n.weight||"normal",this.stretch=n.stretch||"normal"}var r=null,d=null,l=null,c=null;function u(){return null===c&&(c=!!document.fonts),c}function f(){if(null===l){var e=document.createElement("div");try{e.style.font="condensed 100px sans-serif"}catch(e){}l=""!==e.style.font}return l}function h(e,t){return[e.style,e.weight,f()?e.stretch:"","100px",t].join(" ")}a.prototype.load=function(e,t){var i=this,a=e||"BESbswy",l=0,c=t||3e3,f=(new Date).getTime();return new Promise((function(e,t){if(u()&&!function(){if(null===d)if(u()&&/Apple/.test(window.navigator.vendor)){var e=/AppleWebKit\/([0-9]+)(?:\.([0-9]+))(?:\.([0-9]+))/.exec(window.navigator.userAgent);d=!!e&&603>parseInt(e[1],10)}else d=!1;return d}()){var m=new Promise((function(e,t){!function n(){(new Date).getTime()-f>=c?t(Error(c+"ms timeout exceeded")):document.fonts.load(h(i,'"'+i.family+'"'),a).then((function(t){1<=t.length?e():setTimeout(n,25)}),t)}()})),p=new Promise((function(e,t){l=setTimeout((function(){t(Error(c+"ms timeout exceeded"))}),c)}));Promise.race([p,m]).then((function(){clearTimeout(l),e(i)}),t)}else!function(e){document.body?e():document.addEventListener?document.addEventListener("DOMContentLoaded",(function t(){document.removeEventListener("DOMContentLoaded",t),e()})):document.attachEvent("onreadystatechange",(function t(){"interactive"!=document.readyState&&"complete"!=document.readyState||(document.detachEvent("onreadystatechange",t),e())}))}((function(){function d(){var t;(t=-1!=w&&-1!=v||-1!=w&&-1!=y||-1!=v&&-1!=y)&&((t=w!=v&&w!=y&&v!=y)||(null===r&&(t=/AppleWebKit\/([0-9]+)(?:\.([0-9]+))/.exec(window.navigator.userAgent),r=!!t&&(536>parseInt(t[1],10)||536===parseInt(t[1],10)&&11>=parseInt(t[2],10))),t=r&&(w==g&&v==g&&y==g||w==b&&v==b&&y==b||w==x&&v==x&&y==x)),t=!t),t&&(E.parentNode&&E.parentNode.removeChild(E),clearTimeout(l),e(i))}var u=new n(a),m=new n(a),p=new n(a),w=-1,v=-1,y=-1,g=-1,b=-1,x=-1,E=document.createElement("div");E.dir="ltr",o(u,h(i,"sans-serif")),o(m,h(i,"serif")),o(p,h(i,"monospace")),E.appendChild(u.a),E.appendChild(m.a),E.appendChild(p.a),document.body.appendChild(E),g=u.a.offsetWidth,b=m.a.offsetWidth,x=p.a.offsetWidth,function e(){if((new Date).getTime()-f>=c)E.parentNode&&E.parentNode.removeChild(E),t(Error(c+"ms timeout exceeded"));else{var n=document.hidden;!0!==n&&void 0!==n||(w=u.a.offsetWidth,v=m.a.offsetWidth,y=p.a.offsetWidth,d()),l=setTimeout(e,50)}}(),s(u,(function(e){w=e,d()})),o(u,h(i,'"'+i.family+'",sans-serif')),s(m,(function(e){v=e,d()})),o(m,h(i,'"'+i.family+'",serif')),s(p,(function(e){y=e,d()})),o(p,h(i,'"'+i.family+'",monospace'))}))}))},e.exports=a}()},function(e,t,n){e.exports=n(2)},function(e,t,n){"use strict";n.r(t);var o=n(0),i=n.n(o);!function(){if(-1!==document.cookie.indexOf("fonts")||!window.Promise)document.documentElement.classList.remove("fonts-loading"),document.documentElement.classList.add("fonts-loaded");else{setTimeout((function(){var e=[new i.a("Nunito",{weight:400}).load(null,1e4),new i.a("Nunito",{weight:700}).load(null,1e4),new i.a("Muli",{weight:700}).load(null,1e4),new i.a("Muli",{weight:900}).load(null,1e4),new i.a("keystone").load(null,1e4)];Promise.all(e).then((function(){document.documentElement.classList.remove("fonts-loading"),document.documentElement.classList.add("fonts-loaded"),document.cookie="fonts=1; expires=Fri, 31 Dec 2030 23:59:59 GMT"}))}),7e3)}}()}]);
+</script>
+<style id="inline-critical-fonts-css-common-css">
+@font-face {
+	font-family: 'MuliSubset';
+	src: url(data:font/woff2;base64,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) format('woff2');
+	font-style: normal;
+	font-weight: 900;
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: 'NunitoSubset';
+	src: url(data:font/woff2;base64,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) format('woff2');
+	font-style: normal;
+	font-weight: 400;
+	font-display: fallback;
+}
+
+</style>
+<link rel="stylesheet" href="https://www.trustedreviews.com/wp-content/themes/kiara-child-theme/assets/css/sites/post.min.css?v=1617848143">		<script type="text/javascript">
+		window.ipcTags = {"site":"trustedreviews","theme":"kiara-child-theme","section":"reviews","type":"core_review","cplatform":"keystone","dfp_config":{"required_tags":["type","section","site","tagging","pub","author","contentId","subtype","amp","single","page_slug"],"available_criteria":{"mobile":{"criteria":{"window_greater_than":{"width_minimum":0},"window_less_than_equal_to":{"width_maximum":727}},"display_mode":"mobile"},"desktop":{"criteria":{"window_greater_than":{"width_minimum":727}},"display_mode":"desktop"}},"slots":{"header-1":{"name":{"mobile":"mobilebanner01","desktop":"billboard01"},"criteria":["desktop","mobile"],"inview":false,"sizes":[[320,50]],"sizeMapping":[[[992,0],[[970,250],[970,90],[728,90],[728,1],"fluid"]],[[728,0],[[728,90],[728,1],"fluid"]],[[0,0],[[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"inline-1":{"name":"inline01","criteria":["desktop","mobile"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[992,0],[[970,250],[970,90],[728,90],[728,1],"fluid"]],[[728,0],[[728,90],[728,1],"fluid"]],[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"inline-2":{"name":"inline02","criteria":["desktop","mobile"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[992,0],[[970,250],[970,90],[728,90],[728,1],"fluid"]],[[728,0],[[728,90],[728,1],"fluid"]],[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"post-side-1":{"name":"mpu01","criteria":["desktop"],"inview":false,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]]]},"post-side-2":{"name":"mpu02","criteria":["desktop"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]]]},"post-side-3":{"name":"mpu03","criteria":["desktop"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]]]},"post-side-4":{"name":"mpu04","criteria":["desktop"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]]]},"post-side-5":{"name":"mpu05","criteria":["desktop"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]]]},"post-inline-2":{"name":"mpu01","criteria":["mobile"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"post-inline-3":{"name":"mpu02","criteria":["mobile"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"post-inline-4":{"name":"mpu03","criteria":["mobile"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"post-inline-5":{"name":"mpu04","criteria":["mobile"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"archive-1":{"name":"mpu01","criteria":["desktop"],"inview":false,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]]]},"archive-2":{"name":"mpu02","criteria":["desktop"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]]]},"archive-3":{"name":"mpu03","criteria":["desktop"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]]]},"archive-4":{"name":"mpu04","criteria":["desktop"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]]]},"archive-5":{"name":"mpu05","criteria":["desktop"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]]]},"archive-inline-1":{"name":"mpu01","criteria":["mobile"],"inview":false,"sizes":[[300,250]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"archive-inline-2":{"name":"mpu02","criteria":["mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"archive-inline-3":{"name":"mpu03","criteria":["mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"archive-inline-4":{"name":"mpu04","criteria":["mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"archive-inline-5":{"name":"mpu05","criteria":["mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"gallery-1":{"name":{"desktop":"mpu01","mobile":"mpu02"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]],[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"gallery-2":{"name":{"desktop":"mpu02","mobile":"mpu03"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]],[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"gallery-3":{"name":{"desktop":"mpu03","mobile":"mpu04"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]],[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"gallery-4":{"name":{"desktop":"mpu04","mobile":"mpu05"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]],[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"gallery-5":{"name":{"desktop":"mpu05","mobile":"mpu06"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]],[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"gallery-6":{"name":{"desktop":"mpu06","mobile":"mpu07"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]],[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"gallery-7":{"name":{"desktop":"mpu07","mobile":"mpu08"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]],[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"gallery-8":{"name":{"desktop":"mpu08","mobile":"mpu09"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]],[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"gallery-9":{"name":{"desktop":"mpu09","mobile":"mpu10"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]],[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"gallery-10":{"name":{"desktop":"mpu010","mobile":"mpu11"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]],[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"gallery-inline-1":{"name":"gallery_banner01","criteria":["desktop"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[992,0],[[970,250],[970,90],[728,90],[728,1],"fluid"]],[[728,0],[[728,90],[728,1],"fluid"]]]},"gallery-inline-2":{"name":"gallery_banner02","criteria":["desktop"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[992,0],[[970,250],[970,90],[728,90],[728,1],"fluid"]],[[728,0],[[728,90],[728,1],"fluid"]]]},"gallery-inline-3":{"name":"gallery_banner03","criteria":["desktop"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[992,0],[[970,250],[970,90],[728,90],[728,1],"fluid"]],[[728,0],[[728,90],[728,1],"fluid"]]]},"gallery-inline-4":{"name":"gallery_banner04","criteria":["desktop"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[992,0],[[970,250],[970,90],[728,90],[728,1],"fluid"]],[[728,0],[[728,90],[728,1],"fluid"]]]},"gallery-inline-5":{"name":"gallery_banner05","criteria":["desktop"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[992,0],[[970,250],[970,90],[728,90],[728,1],"fluid"]],[[728,0],[[728,90],[728,1],"fluid"]]]},"gallery-inline-6":{"name":"gallery_banner06","criteria":["desktop"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[992,0],[[970,250],[970,90],[728,90],[728,1],"fluid"]],[[728,0],[[728,90],[728,1],"fluid"]]]},"gallery-inline-7":{"name":"gallery_banner07","criteria":["desktop"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[992,0],[[970,250],[970,90],[728,90],[728,1],"fluid"]],[[728,0],[[728,90],[728,1],"fluid"]]]},"gallery-inline-8":{"name":"gallery_banner08","criteria":["desktop"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[992,0],[[970,250],[970,90],[728,90],[728,1],"fluid"]],[[728,0],[[728,90],[728,1],"fluid"]]]},"gallery-inline-9":{"name":"gallery_banner09","criteria":["desktop"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[992,0],[[970,250],[970,90],[728,90],[728,1],"fluid"]],[[728,0],[[728,90],[728,1],"fluid"]]]},"gallery-inline-10":{"name":"gallery_banner10","criteria":["desktop"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[992,0],[[970,250],[970,90],[728,90],[728,1],"fluid"]],[[728,0],[[728,90],[728,1],"fluid"]]]},"instream":{"name":"instream","inview":false,"criteria":["desktop","tablet","mobile"],"sizes":[11,3]},"sovrn":{"name":"sovrn","inview":false,"criteria":["desktop","tablet","mobile"],"sizes":[12,2]},"gumgum":{"name":"gumgum","inview":false,"criteria":["desktop","tablet","mobile"],"sizes":[8,3]},"dfpad-overlay":{"name":"dfpad-overlay","inview":false,"criteria":["desktop","tablet","mobile"],"sizes":[1,1]}},"indexExchange":"ht\/p\/184316-8083655875230.js"},"env":"prod","geo":"br","skimlinks_enabled":true,"pxslot_base":"core_review","amp":false,"meta_title":"iPhone X Camera Review \u2013 How good is the 12-megapixel camera?","meta_description":"The iPhone X has two 12 megapixel sensors on the back, supports portrait mode and takes very good video. Here's our full review.","page_slug":"\/reviews\/iphone-x-camera","contentId":3333264,"subtype":"video","tagging":["author:maxparker","product_name:iphone_x_camera","review_type:review","post_type:core_review"],"author":"maxparker","authorName":"Max Parker","datePublished":"20171114","hourPublished":"15","minPublished":"24","dateUpdated":"20201124","hourUpdated":"16","minUpdated":"58","item_brand":"Apple","single":true,"pub":"trusted_reviews","template":"single-core_review"};
+		</script>
+
+	<!-- This site is optimized with the Yoast SEO plugin v15.1 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>iPhone X Camera Review – How good is the 12-megapixel camera?</title>
+	<meta name="description" content="The iPhone X has two 12 megapixel sensors on the back, supports portrait mode and takes very good video. Here&#039;s our full review." />
+	<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+	<link rel="canonical" href="https://www.trustedreviews.com/reviews/iphone-x-camera" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="iPhone X Camera Review – How good is the 12-megapixel camera?" />
+	<meta property="og:description" content="The iPhone X has two 12 megapixel sensors on the back, supports portrait mode and takes very good video. Here&#039;s our full review." />
+	<meta property="og:url" content="https://www.trustedreviews.com/reviews/iphone-x-camera" />
+	<meta property="og:site_name" content="Trusted Reviews" />
+	<meta property="article:publisher" content="https://www.facebook.com/TrustedReviews/" />
+	<meta property="article:modified_time" content="2020-11-24T16:58:41+00:00" />
+	<meta property="og:image" content="https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/DSCF9452-1024x683.jpg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:creator" content="@parkermax" />
+	<meta name="twitter:site" content="@trustedreviews" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.trustedreviews.com/#website","url":"https://www.trustedreviews.com/","name":"Trusted Reviews","description":"Detailed expert reviews of the latest consumer electronics, IT and computing products.","potentialAction":[{"@type":"SearchAction","target":"https://www.trustedreviews.com/?s={search_term_string}","query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://www.trustedreviews.com/reviews/iphone-x-camera#primaryimage","inLanguage":"en-US","url":"https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/DSCF9452.jpg","width":4896,"height":3264,"caption":"Credit: Max Paker - Trusted Reviews"},{"@type":"WebPage","@id":"https://www.trustedreviews.com/reviews/iphone-x-camera#webpage","url":"https://www.trustedreviews.com/reviews/iphone-x-camera","name":"iPhone X Camera Review \u2013 How good is the 12-megapixel camera?","isPartOf":{"@id":"https://www.trustedreviews.com/#website"},"primaryImageOfPage":{"@id":"https://www.trustedreviews.com/reviews/iphone-x-camera#primaryimage"},"datePublished":"2017-11-14T15:24:37+00:00","dateModified":"2020-11-24T16:58:41+00:00","description":"The iPhone X has two 12 megapixel sensors on the back, supports portrait mode and takes very good video. Here's our full review.","inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.trustedreviews.com/reviews/iphone-x-camera"]}]}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"Organization","url":"https:\/\/www.trustedreviews.com","logo":"https:\/\/www.trustedreviews.com\/wp-content\/uploads\/sites\/54\/2019\/08\/trusted-reviews-logo-white.png"}</script>
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"BreadcrumbList","itemListElement":[{"@context":"http:\/\/schema.org","@type":"ListItem","position":1,"item":{"@id":"https:\/\/www.trustedreviews.com","name":"Home"}},{"@context":"http:\/\/schema.org","@type":"ListItem","position":2,"item":{"@id":"https:\/\/www.trustedreviews.com\/reviews","name":"Reviews"}}]}</script>
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"Product","@id":"#structured-product","name":"Apple iPhone X","description":"The iPhone X has since been superseded by the iPhone XS and now the iPhone 12, but if you can find one \u2013 at the right price we must add \u2013 it still remains a good buy thanks to the recent iOS 13 update. ","brand":{"@type":"Brand","name":"Apple"},"review":{"@type":"Review","headline":"Camera Review","datePublished":"2017-11-14T15:24:37+00:00","dateModified":"2020-11-24T16:58:41+00:00","reviewBody":"iPhone X Camera \u2013 A dual 12-megapixel sensor and great video\r\nThe iPhone X has dual 12-megapixel cameras on the rear, as there are in the iPhone 8 Plus, and that makes it the smallest iPhone yet to benefit from two sensors.\r\n\r\n\r\n\r\nThe main wide-angle camera is optically stabilised with an f\/1.8 aperture \u2013 as seen in other 2017 iPhones \u2013 but the telephoto lens has been updated. It\u2019s also now optically stabilised, with the aperture widened from f\/2.8 to f\/2.4. Both upgrades make the camera a much better performer in low-light, an area in which iPhone cameras have been found wanting in the past.\r\n\r\nApple says it has completely rebuilt the sensor, making it larger and faster, and there\u2019s a new ISP (image signal processor) for better textures and colours.\r\n\r\nPhotos taken with the main camera are truly excellent. Pictures are more saturated than previous iPhones, although not to Samsung\u2019s level, with vivid colours and lovely dynamic range. This makes it excellent for landscape shots, offering a fantastic feeling of depth.\r\n\r\nRelated: Best camera phones\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nThere isn\u2019t really a situation where I haven\u2019t been impressed by the camera on the iPhone X. In low light it produces clean, crisp images with minimal noise, and it doesn\u2019t resort to overexposing light sources.\r\n\r\nIt\u2019s great for portraits, too, especially with the vastly improved secondary camera and the constantly evolving Portrait mode. The wider aperture and added OIS mean you can now take portraits even with when the light isn\u2019t great, with excellent results.\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nWhat\u2019s less impressive is the range of lighting options that add extra effects to these photos. \u2018Contour light\u2019 is the best, this adds some minor flecks of light around the cheekbones and eyes, but the two \u2018Stage light\u2019 options very much live up to the \u2018beta\u2019 tag. These cut out the person, and replace the background with black. The idea is great, but the results have an amateur feel. There\u2019s no blend where the shadow starts and the colour finishes, and the actual cut-out often isn\u2019t accurate.\r\n\r\nVideo can be captured in 240fps slo-mo at 1080p, and 4K at a ridiculously smooth 60fps. The iPhone X and iPhone 8 were the first devices to support the latter, but that's now matched by Android phones. To utilise 4K 60, you\u2019ll have to switch to Apple\u2019s new HEVC format; there don\u2019t appear to be many compatibility issues that I\u2019ve noticed.\r\n\r\nRelated: iPhone 11 review\r\n\r\nWith the switch to the True Depth camera on the front, Apple has now enabled Portrait mode through the 7-megapixel selfie camera too. This was a big feature during the iPhone X announcement, but in reality it\u2019s poor. I\u2019ve yet to take a Portrait selfie with this phone that doesn\u2019t blur out the wrong part, or leave me with weird-looking hair. Hopefully, this feature improves with future software updates.","mainEntityOfPage":"WebPage","publisher":{"@type":"Organization","name":"Trusted Reviews"},"reviewRating":{"@type":"Rating","bestRating":5,"worstRating":0,"ratingValue":4.5},"author":{"@type":"Person","name":"Max Parker"}},"image":"https:\/\/www.trustedreviews.com\/wp-content\/uploads\/sites\/54\/2017\/11\/DSCF9456.jpg"}</script>
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"Article","headline":"Camera","articleBody":"<h2><b>iPhone X Camera \u2013 A dual 12-megapixel sensor and great video<\/b><\/h2>\r\n<span style=\"font-weight: 400\">The iPhone X has dual 12-megapixel cameras on the rear, as there are in the <a href=\"http:\/\/www.trustedreviews.com\/reviews\/iphone-8-plus\">iPhone 8 Plus<\/a>, and that makes it the smallest iPhone yet to benefit from two sensors.<\/span>\r\n\r\n<img class=\"alignnone size-large wp-image-3333201\" src=\"https:\/\/www.trustedreviews.com\/wp-content\/uploads\/sites\/54\/2017\/11\/DSCF9452-1024x683.jpg\" alt=\"iPhone X\" width=\"630\" height=\"420\" \/>\r\n\r\n<span style=\"font-weight: 400\">The main wide-angle camera is optically stabilised with an f\/1.8 aperture \u2013 as seen in other 2017 iPhones \u2013 but the telephoto lens has been updated. It\u2019s also now optically stabilised, with the aperture widened from f\/2.8 to f\/2.4. Both upgrades make the camera a much better performer in low-light, an area in which iPhone cameras have been found wanting in the past.<\/span>\r\n\r\n<span style=\"font-weight: 400\">Apple says it has completely rebuilt the sensor, making it larger and faster, and there\u2019s a new ISP (image signal processor) for better textures and colours.<\/span>\r\n\r\n<span style=\"font-weight: 400\">Photos taken with the main camera are truly excellent. Pictures are more saturated than previous iPhones, although not to Samsung\u2019s level, with vivid colours and lovely dynamic range. This makes it excellent for landscape shots, offering a fantastic feeling of depth.<\/span>\r\n\r\n<strong>Related: <a href=\"https:\/\/www.trustedreviews.com\/best\/best-camera-phones-3520817\">Best camera phones<\/a><\/strong>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n<span style=\"font-weight: 400\">There isn\u2019t really a situation where I haven\u2019t been impressed by the camera on the iPhone X. In low light it produces clean, crisp images with minimal noise, and it doesn\u2019t resort to overexposing light sources.<\/span>\r\n\r\n<span style=\"font-weight: 400\">It\u2019s great for portraits, too, especially with the vastly improved secondary camera and the constantly evolving Portrait mode. The wider aperture and added OIS mean you can now take portraits even with when the light isn\u2019t great, with excellent results.<\/span>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n<img class=\"alignnone size-large wp-image-3333214\" src=\"https:\/\/www.trustedreviews.com\/wp-content\/uploads\/sites\/54\/2017\/11\/IMG_0086-1024x768.jpg\" alt=\"\" width=\"630\" height=\"473\" \/>\r\n\r\n\r\n\r\n<img class=\"alignnone size-large wp-image-3333223\" src=\"https:\/\/www.trustedreviews.com\/wp-content\/uploads\/sites\/54\/2017\/11\/IMG_1056-1024x768.jpg\" alt=\"iPhone X Photo sample\" width=\"630\" height=\"473\" \/>\r\n\r\n<span style=\"font-weight: 400\">What\u2019s less impressive is the range of lighting options that add extra effects to these photos. \u2018Contour light\u2019 is the best, this adds some minor flecks of light around the cheekbones and eyes, but the two \u2018Stage light\u2019 options very much live up to the \u2018beta\u2019 tag. These cut out the person, and replace the background with black. The idea is great, but the results have an amateur feel. There\u2019s no blend where the shadow starts and the colour finishes, and the actual cut-out often isn\u2019t accurate.<\/span>\r\n\r\n<span style=\"font-weight: 400\">Video can be captured in 240fps slo-mo at 1080p, and 4K at a ridiculously smooth 60fps. The iPhone X and iPhone 8 were the first devices to support the latter, but that's now matched by Android phones. To utilise 4K 60, you\u2019ll have to switch to Apple\u2019s new HEVC format; there don\u2019t appear to be many compatibility issues that I\u2019ve noticed.<\/span>\r\n\r\n<strong>Related: <a href=\"https:\/\/www.trustedreviews.com\/reviews\/iphone-11\">iPhone 11 review<\/a><\/strong>\r\n\r\n<span style=\"font-weight: 400\">With the switch to the True Depth camera on the front, Apple has now enabled Portrait mode through the 7-megapixel selfie camera too. This was a big feature during the iPhone X announcement, but in reality it\u2019s poor. I\u2019ve yet to take a Portrait selfie with this phone that doesn\u2019t blur out the wrong part, or leave me with weird-looking hair. Hopefully, this feature improves with future software updates.<\/span>","url":"https:\/\/www.trustedreviews.com\/reviews\/iphone-x-review","thumbnailUrl":"https:\/\/www.trustedreviews.com\/wp-content\/uploads\/sites\/54\/2017\/11\/DSCF9456.jpg","image":"https:\/\/www.trustedreviews.com\/wp-content\/uploads\/sites\/54\/2017\/11\/DSCF9456.jpg","dateCreated":"2017-11-14T15:24:37+00:00","datePublished":"2017-11-14T15:24:37+00:00","dateModified":"2020-11-24T16:58:41+00:00","articleSection":"Review","author":{"@type":"Person","name":"Max Parker"},"publisher":{"@type":"Organization","name":"Trusted Reviews","logo":{"@type":"http:\/\/schema.org\/ImageObject","url":"https:\/\/www.trustedreviews.com\/wp-content\/uploads\/sites\/54\/2018\/10\/tr-logo-large-1.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.trustedreviews.com\/reviews\/iphone-x-camera"},"keywords":[]}</script>
+<link rel='dns-prefetch' href='//www.trustedreviews.com' />
+<link rel="alternate" type="application/rss+xml" title="Trusted Reviews &raquo; Feed" href="https://www.trustedreviews.com/feed" />
+<style id='keystone-context-widget-inline-css' type='text/css'>
+/* This stylesheet is used to style the public view of the widget. */
+
+.widget_keystone-context-widget-id .taxonomy-signpost {
+    display: none;
+}
+
+</style>
+<link rel="https://api.w.org/" href="https://www.trustedreviews.com/wp-json/" /><link rel="alternate" type="application/json" href="https://www.trustedreviews.com/wp-json/wp/v2/core_review/3333264" /><link rel="alternate" type="application/json+oembed" href="https://www.trustedreviews.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.trustedreviews.com%2Freviews%2Fiphone-x-camera" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.trustedreviews.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.trustedreviews.com%2Freviews%2Fiphone-x-camera&#038;format=xml" />
+<meta property="fb:pages" content="38275114220" />      <!-- Google Tag Manager -->
+      <script>
+        window.addEventListener( 'load', function() {
+          setTimeout( function() {
+            (function ( w, d, s, l, i ) {
+              w[ l ] = w[ l ] || [];
+              w[ l ].push({
+                'gtm.start' :
+                  new Date().getTime(), event : 'gtm.js'
+              });
+              var f = d.getElementsByTagName(s)[ 0 ],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+              j.async = true;
+              j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+              f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer','GTM-K24XJLX');
+          }, 1600 );
+        } );
+
+      </script>
+      <!-- End Google Tag Manager -->
+            <meta name="onesignal" content="wordpress-plugin"/>
+            <script>
+
+      window.OneSignal = window.OneSignal || [];
+
+      OneSignal.push( function() {
+        OneSignal.SERVICE_WORKER_UPDATER_PATH = "OneSignalSDKUpdaterWorker.js.php";
+        OneSignal.SERVICE_WORKER_PATH = "OneSignalSDKWorker.js.php";
+        OneSignal.SERVICE_WORKER_PARAM = { scope: '/' };
+
+        OneSignal.setDefaultNotificationUrl("https://www.trustedreviews.com");
+        var oneSignal_options = {};
+        window._oneSignalInitOptions = oneSignal_options;
+
+        oneSignal_options['wordpress'] = true;
+oneSignal_options['appId'] = '644e5c59-323a-453b-bfbe-430ae58ed2b8';
+oneSignal_options['welcomeNotification'] = { };
+oneSignal_options['welcomeNotification']['disable'] = true;
+oneSignal_options['path'] = "https://www.trustedreviews.com/wp-content/plugins/onesignal-free-web-push-notifications/sdk_files/";
+oneSignal_options['safari_web_id'] = "web.onesignal.auto.32551e0e-3454-416e-9258-23f2fe99c3c8";
+oneSignal_options['promptOptions'] = { };
+                OneSignal.init(window._oneSignalInitOptions);
+                OneSignal.showSlidedownPrompt();      });
+
+      function documentInitOneSignal() {
+        var oneSignal_elements = document.getElementsByClassName("OneSignal-prompt");
+
+        var oneSignalLinkClickHandler = function(event) { OneSignal.push(['registerForPushNotifications']); event.preventDefault(); };        for(var i = 0; i < oneSignal_elements.length; i++)
+          oneSignal_elements[i].addEventListener('click', oneSignalLinkClickHandler, false);
+      }
+
+      if (document.readyState === 'complete') {
+           documentInitOneSignal();
+      }
+      else {
+           window.addEventListener("load", function(event){
+               documentInitOneSignal();
+          });
+      }
+    </script>
+<link rel="icon" href="https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/07/cropped-trusted-reviews-icon-3-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/07/cropped-trusted-reviews-icon-3-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/07/cropped-trusted-reviews-icon-3-180x180.png" />
+<meta name="msapplication-TileImage" content="https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/07/cropped-trusted-reviews-icon-3-270x270.png" />
+			<script type="text/javascript">
+				// Ensure the legacy APIs are still available.
+				window.tenantGetterQueue = window.tenantGetterQueue || [];
+				window.tenantSetterQueue = window.tenantSetterQueue || [];
+
+				// Register the Venatus task queue.
+				window.ipcVenatusQueue = window.ipcVenatusQueue || [];
+				window.ipcPlacementsMapping = window.ipcPlacementsMapping || {};
+
+				( function( venatusQueue ) {
+					var getDisplayWidth = function(){var e=0;if(typeof window.innerWidth!="undefined"){e=window.innerWidth}else if(typeof document.documentElement!="undefined"&&typeof document.documentElement.clientWidth!="undefined"&&document.documentElement.clientWidth!=0){e=document.documentElement.clientWidth}else{e=document.getElementsByTagName("body")[0].clientWidth}return Number(e)};
+					var displayWidth = getDisplayWidth();
+
+					var displayWidthToPlacementIds = function( contextPlacementMap ) {
+						var placementIds = [];
+
+						if ( contextPlacementMap.mobile && displayWidth < 1000 ) {
+							placementIds.push( contextPlacementMap.mobile );
+						}
+						if ( contextPlacementMap.desktop && displayWidth >= 1000 ) {
+							placementIds.push( contextPlacementMap.desktop );
+						}
+						if ( contextPlacementMap.all ) {
+							placementIds.push( contextPlacementMap.all );
+						}
+
+						return placementIds;
+					}
+
+					var renderPlacement = function( placement ) {
+						if ( 'object' === typeof placement.placement_ids && placement.div_id ) {
+							displayWidthToPlacementIds( placement.placement_ids ).map( function( data ) {
+								var placeholder = document.getElementById( placement.div_id );
+								var element = document.createElement( 'div' );
+
+								if ( placeholder ) {
+									element.setAttribute( 'class', 'vm-placement' );
+									if ( data.id ) {
+										element.setAttribute( 'data-id', data.id );
+									}
+									if ( data.css ) {
+										Object.keys( data.css ).forEach( function( prop ) {
+											element.style[prop] = data.css[prop];
+										} );
+									}
+									placeholder.appendChild( element );
+								}
+							} );
+						}
+					}
+
+					venatusQueue.push = function( placementConfig ) {
+						if ( placementConfig ) {
+							renderPlacement( placementConfig );
+						}
+					}
+
+					venatusQueue.map( renderPlacement );
+				} )( window.ipcVenatusQueue );
+			</script>
+			<script>
+			  window.addEventListener( 'load', function() {
+				setTimeout( function() {
+				  var s = document.createElement("script"), el = document.getElementsByTagName("script")[0];
+				  s.async = true;
+				  s.setAttribute("data-site-id", "5f0f2c4a9326645fe4016720");
+				  s.setAttribute("data-mode", "scan");
+				  s.src = 'https://hb.vntsm.com/v3/live/ad-manager.min.js';
+				  el.parentNode.insertBefore(s, el);
+				}, 1400 );
+			  } );
+			</script>
+					<style type="text/css" id="wp-custom-css">
+			.apester-element {
+	width: auto!important;
+}
+
+.review-specs .review-specs__table {
+	display: block!important;
+}
+
+/* DO NOT REMOVE ANYTHING BELOW HERE WITHOUT ASKING JOHN HUDSON */
+
+.home.has-adverts,
+.page.has-adverts{
+	margin-top: 0!important;
+}
+
+.post-main strong {
+	font-size: 1.15em;
+}
+
+@media (max-width: 45.49em) {
+	.header .logo img {
+		max-width: 140px;
+	}
+}
+
+/* ----- HERO ----- */
+.home .listing--hero.s-container--fullbleed,
+.page .listing--hero.s-container--fullbleed {
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+}
+
+.home .listing--hero.s-container--fullbleed .s-container__inner,
+.page .listing--hero.s-container--fullbleed .s-container__inner {
+	max-width: 100%;
+}
+
+.home .listing--hero.s-container--fullbleed .widgettitle,
+.page .listing--hero.s-container--fullbleed .widgettitle {
+	display: block;
+    margin: 45px auto 30px;
+    max-width: 1440px;
+}
+
+.home .listing--hero.s-container--fullbleed .listing-item,
+.page .listing--hero.s-container--fullbleed .listing-item {
+	padding: 0.5px;
+	text-align: left;
+  margin-bottom: 0!important;
+}
+
+.home .listing--hero.s-container--fullbleed .listing-item:after,
+.page .listing--hero.s-container--fullbleed .listing-item:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.home .listing--hero.s-container--fullbleed .listing-item .entry-content,
+.page .listing--hero.s-container--fullbleed .listing-item .entry-content {
+	display: block;
+	padding: 30px 30px 65px 30px;
+}
+
+.home .listing--hero.s-container--fullbleed .listing-item:first-child .entry-content,
+.page .listing--hero.s-container--fullbleed .listing-item:first-child .entry-content {
+	background: rgb(82,21,120);
+	background: -moz-linear-gradient(left,  rgba(82,21,120,0.8) 0%, rgba(33,109,181,0.8) 100%);
+	background: -webkit-linear-gradient(left,  rgba(82,21,120,0.8) 0%,rgba(33,109,181,0.8) 100%);
+	background: linear-gradient(to right,  rgba(82,21,120,0.8) 0%,rgba(33,109,181,0.8) 100%);
+	border-radius: 5px 0 0 0;
+	height: auto;
+	left: unset;
+    max-width: 720px;
+    right: 0;
+}
+
+.home .listing--hero.s-container--fullbleed .listing-item:last-child .entry-content,
+.page .listing--hero.s-container--fullbleed .listing-item:last-child .entry-content {
+	background: rgb(229,42,24);
+	background: -moz-linear-gradient(left,  rgba(229,42,24,0.8) 0%, rgba(82,21,120,0.8) 100%);
+	background: -webkit-linear-gradient(left,  rgba(229,42,24,0.8) 0%,rgba(82,21,120,0.8) 100%);
+	background: linear-gradient(to right,  rgba(229,42,24,0.8) 0%,rgba(82,21,120,0.8) 100%);
+	border-radius: 0 5px 0 0;
+	height: auto;
+    max-width: 720px;
+}
+
+.home .listing--hero.s-container--fullbleed .listing-item h3, 
+.page .listing--hero.s-container--fullbleed .listing-item h3{
+	height: 120px;
+}
+
+.home .listing--hero.s-container--fullbleed .listing-item h3 span,
+.page .listing--hero.s-container--fullbleed .listing-item h3 span {
+	background: none;
+	box-shadow: none;
+	color: white;
+	line-height: 1;
+	padding: 0;
+	text-shadow: 1px 0 2px rgba(0,0,0,0.5);
+}
+
+.home .listing--hero.s-container--fullbleed .listing-item .taxonomy-signpost,
+.page .listing--hero.s-container--fullbleed .listing-item .taxonomy-signpost {
+	background: #000000;
+	border-radius: 20px;
+	bottom: 30px;
+	color: #ffffff;
+	display: block;
+	font-size: 0.65em;
+	left: 28px;
+	padding: 5px 10px;
+    position: absolute;
+    text-transform: capitalize;
+}
+
+.home .listing--hero.s-container--fullbleed .listing-item .author,
+.page .listing--hero.s-container--fullbleed .listing-item .author,
+.listing--hero.s-container--fullbleed .listing-item .date {
+	color: #ffffff;
+	float: left;
+	margin: 30px 0 0 0;
+    padding-right: 10px;
+    text-transform: capitalize;
+}
+
+.home .listing--hero.s-container--fullbleed .listing-item .author,
+.page .listing--hero.s-container--fullbleed .listing-item .author {
+	margin-right: 10px;
+	padding-right: 12px;
+	position: relative;
+}
+
+.home .listing--hero.s-container--fullbleed .listing-item .author:after,
+.page .listing--hero.s-container--fullbleed .listing-item .author:after {
+	background: rgba(255,255,255,0.7);
+	content: '';
+	height: 10px;
+	position: absolute;
+	top: 3px;
+	right: 1px;
+    width: 1px;
+}
+
+/* ----- SINGLE INC SIDEBAR / FILMSTRIP ----- */
+
+.home .listing--single-inc-sidebar,
+.home .listing--filmstrip,
+.page .listing--single-inc-sidebar,
+.page .listing--filmstrip {
+  background: #eef4fa;
+  margin: 0;
+  padding: 0 15px;
+}
+
+.home .listing--filmstrip,
+.page .listing--filmstrip {
+	padding-bottom: 15px;
+}
+
+.home .listing--filmstrip p,
+.page .listing--filmstrip p {
+	color: #55627e;
+}
+
+.home .listing--filmstrip-b p,
+.page .listing--filmstrip-b p {
+	color: #ffffff;
+}
+
+.home .listing--single-inc-sidebar .widgettitle,
+.home .listing--filmstrip .widgettitle,
+.page .listing--single-inc-sidebar .widgettitle,
+.page .listing--filmstrip .widgettitle {
+    display: block;
+    margin: 0 auto;
+    max-width: 1440px;
+    padding: 30px 0 15px 0;
+}
+
+.home .listing--single-inc-sidebar .listing-items,
+.page .listing--single-inc-sidebar .listing-items {
+  padding: 15px 0;
+}
+
+.home .listing--single-inc-sidebar .listing-item,
+.page .listing--single-inc-sidebar .listing-item {
+  margin: 0;
+}
+
+.home .listing--single-inc-sidebar .listing-entry,
+.page .listing--single-inc-sidebar .listing-entry {
+  border-bottom: 1px #ffffff solid;
+  display: flex;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+
+.home .listing--single-inc-sidebar .listing-item:last-child .listing-entry,
+.page .listing--single-inc-sidebar .listing-item:last-child .listing-entry {
+  border-bottom: none;
+}
+
+.home .listing--single-inc-sidebar .listing-entry .entry-image,
+.page .listing--single-inc-sidebar .listing-entry .entry-image {
+  padding-top: 60%;
+}
+
+.home .listing--single-inc-sidebar .entry-media,
+.page .listing--single-inc-sidebar .entry-media {
+  flex-basis: 30%;
+}
+
+.home .listing--single-inc-sidebar .entry-content,
+.page .listing--single-inc-sidebar .entry-content {
+  flex-basis: 70%;
+  padding: 0 15px;
+}
+
+.home .listing--single-inc-sidebar .entry-content h3,
+.page .listing--single-inc-sidebar .entry-content h3 {
+  font-size: 0.8em
+}
+
+.home .listing--single-inc-sidebar .entry-content .taxonomy-signpost,
+.home .listing--filmstrip .entry-content .taxonomy-signpost,
+.page .listing--single-inc-sidebar .entry-content .taxonomy-signpost,
+.page .listing--filmstrip .entry-content .taxonomy-signpost {
+  background: #000000;
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 0.6em;
+  margin-bottom: 5px;
+  padding: 2px 5px;
+  text-transform: capitalize;
+}
+
+
+.home .listing--single-inc-sidebar .entry-content .author,
+.home .listing--single-inc-sidebar .entry-content .date,
+.home .listing--filmstrip .entry-content .author,
+.home .listing--filmstrip .entry-content .date,
+.page .listing--single-inc-sidebar .entry-content .author,
+.page .listing--single-inc-sidebar .entry-content .date,
+.page .listing--filmstrip .entry-content .author,
+.page .listing--filmstrip .entry-content .date {
+  color: #55627e;
+  display: block;
+  font-size: 0.6em;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.home .listing--single-inc-sidebar .querywidget-more,
+.page .listing--single-inc-sidebar .querywidget-more {
+  margin: 0;
+  padding-bottom: 15px;
+}
+
+
+@media (max-width: 1439px) {
+
+	/* ----- HERO ----- */
+
+	.home .listing--hero.s-container--fullbleed .listing-item h3,
+  .page .listing--hero.s-container--fullbleed .listing-item h3 {
+		font-size: 1.6em;
+		height: 90px;
+	}
+
+	.home .listing--hero.s-container--fullbleed .listing-item .author,
+	.home .listing--hero.s-container--fullbleed .listing-item .date,
+  .page .listing--hero.s-container--fullbleed .listing-item .author,
+  .page .listing--hero.s-container--fullbleed .listing-item .date {
+		margin-top: 15px;
+	}
+}
+
+@media (max-width: 991px) {
+
+	/* ----- HERO ----- */
+
+	.home .listing--hero.s-container--fullbleed .listing-item,
+  .page .listing--hero.s-container--fullbleed .listing-item {
+		flex-basis: 100%;
+		margin-bottom: 0!important;
+	}
+
+	.home .listing--hero.s-container--fullbleed .entry-content,
+  .page .listing--hero.s-container--fullbleed .entry-content {
+		max-width: 100%!important;
+	}
+
+	.home .listing--hero.s-container--fullbleed .listing-item h3,
+  .page .listing--hero.s-container--fullbleed .listing-item h3 {
+		height: auto;
+	}
+}
+
+@media (max-width: 727px) {
+
+	/* ----- HERO ----- */
+
+	.home .listing--hero.s-container--fullbleed .listing-item .entry-content,
+  .page .listing--hero.s-container--fullbleed .listing-item .entry-content {
+		border-radius: 5px !important;
+		box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
+		-webkit-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
+		display: block;
+		left: 5%!important;
+		margin-bottom: 5%;
+		margin-top: -10%;
+		max-width: 90% !important;
+		padding: 30px 30px 95px 30px;
+		right: 5%!important;
+	}
+}
+
+@media( min-width: 992px) {
+  /* ----- SINGLE INC SIDEBAR ----- */
+	
+	.home .listing--filmstrip,
+  .page .listing--filmstrip {
+		padding-bottom: 30px;
+	}
+
+  .home .listing--single-inc-sidebar .listing-entry .entry-media,
+  .page .listing--single-inc-sidebar .listing-entry .entry-media {
+      flex-basis: 25%;
+  }
+  
+  .home .listing--single-inc-sidebar .listing-entry h3,
+  .page .listing--single-inc-sidebar .listing-entry h3 {
+      font-size: 1.2em;
+			padding-bottom: 0px;
+  }
+  
+  .home .listing--single-inc-sidebar .listing-entry .entry-content,
+  .page .listing--single-inc-sidebar .listing-entry .entry-content {
+      display: block;
+  }
+  
+  .home .listing--single-inc-sidebar .entry-content .taxonomy-signpost, 
+  .home .listing--filmstrip .entry-content .taxonomy-signpost,
+  .page .listing--single-inc-sidebar .entry-content .taxonomy-signpost, 
+  .page .listing--filmstrip .entry-content .taxonomy-signpost {
+    font-size: 0.8em;
+  }
+
+
+  .home .listing--single-inc-sidebar .entry-content .author,
+  .home .listing--single-inc-sidebar .entry-content .date,
+  .home .listing--filmstrip .entry-content .author,
+  .home .listing--filmstrip .entry-content .date,
+  .page .listing--single-inc-sidebar .entry-content .author,
+  .page .listing--single-inc-sidebar .entry-content .date,
+  .page .listing--filmstrip .entry-content .author,
+  .page .listing--filmstrip .entry-content .date {
+    display: inline-block;
+    font-size: 0.8em;
+    margin-right: 10px;
+    padding-right: 10px;
+    position: relative;
+  }
+  
+  .home .listing--single-inc-sidebar .entry-content .author:after,
+  .home .listing--filmstrip .entry-content .author:after,
+  .page .listing--single-inc-sidebar .entry-content .author:after,
+  .page .listing--filmstrip .entry-content .author:after {
+    background: #a6acbb;
+    content: '';
+    height: 12px;
+    position: absolute;
+    right: -2px;
+    top: 4px;
+    width: 1px;
+  }
+  
+  .home .listing--single-inc-sidebar .listing-entry .entry-image,
+  .page .listing--single-inc-sidebar .listing-entry .entry-image {
+      padding-top: 56.25%;
+  }
+  
+}
+
+.listing-related {
+	font-size: 1.2em;
+	font-weight: bold;
+	padding: 20px 0;
+}
+
+@media (min-width: 728px) {
+	.single-roundup .articleBody {
+		max-width: 992px !important;
+	}
+	
+	.single-roundup .roundup__card {
+		margin-left: unset;
+		margin-right: unset;
+		width: calc(100% - 300px)!important;
+	}
+	
+	.single-roundup .ad-container--inline-side {
+		margin-right: -20px !important;
+	}
+}
+
+@media (min-width: 78.25em) {
+
+	body.keystone-premium-inskin.has-adverts,
+	body.keystone-premium-sizmek.has-adverts,
+	body.keystone-premium-sizemek.has-adverts{
+		margin-top: 250px !important;
+	}
+	
+	body.keystone-premium-inskin.has-adverts #inline-1,
+	body.keystone-premium-sizmek.has-adverts #inline-1,
+	body.keystone-premium-sizemek.has-adverts #inline-1 {
+		height: 0;
+		margin-bottom: -90px;
+	}
+	
+	body.keystone-premium-inskin.has-adverts.single-roundup .articleBody,
+	body.keystone-premium-sizmek.has-adverts.single-roundup .articleBody,
+	body.keystone-premium-sizemek.has-adverts.single-roundup .articleBody {
+		margin: 0 !important;
+	}
+
+	body.keystone-premium-inskin.home .listing--hero.s-container--fullbleed .listing-item h3, 
+	body.keystone-premium-sizmek.home .listing--hero.s-container--fullbleed .listing-item h3, 
+	body.keystone-premium-sizemek.home .listing--hero.s-container--fullbleed .listing-item h3 { 
+		font-size: 1.4em;
+		height: 60px;
+	}
+
+	body.keystone-premium-inskin.home .listing--hero.s-container--fullbleed .listing-item .entry-content,
+	body.keystone-premium-sizmek.home .listing--hero.s-container--fullbleed .listing-item .entry-content,
+	body.keystone-premium-sizemek.home .listing--hero.s-container--fullbleed .listing-item .entry-content {
+		padding: 20px 30px 45px 30px;
+	}
+	
+	body.keystone-premium-inskin.home .listing--hero.s-container--fullbleed .taxonomy-signpost, 
+	body.keystone-premium-sizmek.home .listing--hero.s-container--fullbleed .taxonomy-signpost, 
+	body.keystone-premium-sizemek.home .listing--hero.s-container--fullbleed .taxonomy-signpost { 
+	bottom: 10px;
+	}
+	
+	body.keystone-premium-inskin.single-format-video .post-body>*,
+	body.keystone-premium-sizmek.single-format-video .post-body>*,
+	body.keystone-premium-sizemek.single-format-video .post-body>*{
+		margin: 0 !important;
+		max-width: calc(100% - 315px);
+	}
+	
+	
+	.single-roundup .single-sidebar {
+		right: 20px;
+/* 		top: 560px; */
+	}
+	
+	.single-roundup .post-main__inner {
+		padding-right: 340px;
+	}
+	
+}
+
+@media (min-width: 1250px) {
+	.keystone-premium-skin .efw .efw_hero,
+	.keystone-premium-sizmek .efw .efw_hero,
+	.keystone-premium-sizemek .efw .efw_hero,
+	.keystone-premium-inskin .efw .efw_hero {
+		margin-left: calc(0px - (((100vw - 350px) - 700px) / 2));
+		max-width: calc(100vw - 350px);
+	}
+}
+
+@media (min-width: 1550px) {
+		.keystone-premium-skin .efw .efw_hero,
+	.keystone-premium-sizmek .efw .efw_hero,
+	.keystone-premium-sizemek .efw .efw_hero,
+	.keystone-premium-inskin .efw .efw_hero {
+		margin-left: calc(0px - ((1200px - 700px) / 2));
+		max-width: 1200px;
+	}
+}
+
+/* DO NOT REMOVE ANYTHING ABOVE HERE WITHOUT ASKING JOHN HUDSON */
+
+.eagle-widget.eagle-combo-widget .egl-combo-container {
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(to right, #E52A18 0%, #521578 100%) 1;
+  min-width: 100%;
+  margin: 20px 0;
+  padding: 15px 0 25px 0;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list h3.egl-combo-title {
+  display: block;
+  margin: 0 0 20px 0;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:not(:first-of-type) {
+    margin-top: 12px;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a {
+  border-radius: 5px;
+  background-color: white;
+  height: 90px;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div:nth-child(2) {
+  flex: 1;
+  padding: 10px 0 0 10px;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div:nth-child(2) div.egl-deal-stock {
+  display: none;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-name {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-price {
+    display: flex;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-name,
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-price {
+  color: #000;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 16px;
+  align-items: center;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div:nth-child(2),
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-price {
+  height: 45px;
+  background-color: #EEF4FA;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-price {
+  justify-content: flex-end;
+  padding: 10px 15px 0 0;
+  color: #E52A18;
+  align-items: flex-start;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-logo,
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-view {
+  position: absolute;
+  bottom: 0;
+  flex: 1;
+  height: 45px;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-logo {
+  left: 0;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-view {
+  display: flex;
+  justify-content: center;
+  right: 10px;
+  min-width: 13%;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-view .egl-tr-button {
+  align-self: center;
+  background-color: transparent;
+  border-bottom: 1px solid red;
+  color: #000;
+  min-width: auto;
+  padding: 0 0 1px 0;
+  text-transform: capitalize;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-logo {
+  display: flex;
+  align-items: center;
+  padding-left: 5px;
+  min-width: 80px;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-logo img {
+  max-height: 75%;
+  object-fit: cover;
+  overflow: hidden;
+  margin: 0;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a {
+  height: 120px;
+  margin-bottom: 18px;
+  background: linear-gradient(to right, #e52a18 0%, #521578 100%);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.15);
+  border: none;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div.egl-deal-logo {
+  position: absolute;
+  bottom: 0;
+  height: 50px;
+  left: 15px;
+  min-width: 105px;
+  border-radius: 0;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  background-color: white;
+  max-width: 20%;
+  margin: 0;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div.egl-deal-logo img {
+  max-width: 95%;
+  min-width: 90%;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div.egl-deal-view {
+  border: 1px solid white;
+  border-radius: 5px;
+  position: absolute;
+  right: 15px;
+  bottom: 20px;
+  flex: 1;
+  margin-right: 0;
+  height: 30px;
+  width: 80px;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div.egl-deal-view .egl-tr-button {
+  color: white;
+  border-bottom: none;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div.egl-deal-price {
+  color: #FFF;
+  font-size: 14px;
+  line-height: 18px;
+  min-width: 90px;
+  justify-content: flex-end;
+  background-color: transparent;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div:nth-child(2) {
+  display: flex;
+  flex: 5;
+  padding: 10px 20px 10px 10px;
+  height: auto;
+  background-color: transparent;
+}
+html:not(.fonts-loading) .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div:nth-child(2) .egl-deal-name {
+  font-family: 'Muli';
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div:nth-child(2) .egl-deal-name {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: bold;
+  color: #FFF;
+}
+
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div.egl-deal-view {
+    min-width: 80px;
+}
+
+@media screen and (min-width: 768px) {
+  .eagle-widget.eagle-combo-widget .egl-combo-container {
+    border: none;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type div:nth-child(2) {
+    padding: 0;
+    min-height: 100%;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type div:nth-child(2) div.egl-deal-stock {
+    display: none;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div.egl-deal-logo {
+    height: 100%;
+    position: relative;
+    min-width: 20%;
+    max-width: 20%;
+    margin: 0;
+    left: 0;
+    border-radius: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-color: #FFF;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div.egl-deal-name {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div:nth-child(2) > div.egl-deal-name,
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div.egl-deal-price {
+    font-size: 24px;
+    line-height: 28px;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div.egl-deal-price {
+    flex: 1;
+    margin: 0;
+    max-width: 20%;
+    justify-content: flex-end;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div.egl-deal-view {
+    background-color: transparent;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a {
+    height: 50px;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-logo,
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-view {
+    position: static;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-logo {
+    max-width: 20%;
+    display: flex;
+    align-items: center;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-logo img {
+    max-width: 100%;
+    max-height: 80%;
+    margin: 0 auto;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-name {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-view {
+    max-width: 12%;
+    background-color: #EEF4FA;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div:nth-child(2) {
+    height: 100%;
+    padding: 0;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-logo,
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-price,
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-view,
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    height: 48px;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div:nth-child(2) div.egl-deal-stock {
+      min-width: 80px;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-logo div.egl-deal-stock,
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-price div.egl-deal-stock,
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-view div.egl-deal-stock,
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div:nth-child(2) div.egl-deal-stock {
+    display: inline-block;
+    background-color: #FFF;
+    padding: 2px 10px 3px 8px;
+    border-radius: 12px;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-weight: lighter;
+    color: #555;
+    width: 95px;
+    margin-right: 15px;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-logo div.egl-deal-stock:before,
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-price div.egl-deal-stock:before,
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-view div.egl-deal-stock:before,
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div:nth-child(2) div.egl-deal-stock:before {
+    content: '';
+    height: 9px;
+    width: 9px;
+    background-color: #7ED321;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 6px;
+    padding-top: 1px;
+    font-size: 13px;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-name {
+    padding-left: 15px;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-price {
+    max-width: 10%;
+  }
+}
+/* MOBILE WIDGET FIX */
+@media (max-width: 420px) {
+	.eagle-widget.eagle-mobile-widget .eagle-mob-widget-content {
+		margin-top: 30px;
+	}
+	.eagle-widget.eagle-mobile-widget .eagle-mob-widget-content .egl-mob-row {
+	height: 120px;
+	min-height: 120px;
+}
+	.eagle-widget.eagle-mobile-widget .eagle-mob-widget-content .egl-mob-header__title {
+		margin: 0 0 15px 0;
+	}
+	.eagle-widget.eagle-mobile-widget .eagle-mob-widget-content .egl-mob-header__description {
+		position: relative;
+	}
+	.eagle-widget.eagle-mobile-widget .eagle-mob-widget-content .egl-mob-header__deals-count + a.egl-mob-header--cta {
+		top: -12px;
+		right: 0px;
+		padding: 5px;
+	}
+	.eagle-widget.eagle-mobile-widget .eagle-mob-widget-content h4.egl-mob-header__title {
+		margin: 5px 0 15px 0;
+	}
+  .eagle-widget.eagle-mobile-widget .eagle-mob-widget-content .egl-mob-tab .iradio_square-blue, .eagle-widget.eagle-mobile-widget .eagle-mob-widget-content .egl-mob-tab input[type=radio] + label,
+	.eagle-widget.eagle-mobile-widget .eagle-mob-widget-content .egl-mob-form .egl-contract-features span {
+		font-size: 11px;
+	}
+	.eagle-widget.eagle-mobile-widget .eagle-mob-widget-content .egl-mob-form .egl-mob-tab {
+		margin: 0 5px;
+	}
+	.eagle-widget.eagle-mobile-widget .eagle-mob-widget-content .egl-mob-form {
+		display: flex;
+		justify-content: center;
+	}
+}
+
+.eagle-widget.eagle-mobile-widget .eagle-mob-widget-content .egl-mob-row {
+	max-height: 120px;
+}
+
+.eagle-widget.eagle-mobile-widget .eagle-mob-widget-content .egl-contract-features{
+	font-size: 11px;
+}
+
+.eagle-widget.eagle-mobile-widget .eagle-mob-widget-content .egl-contract--bottom, .eagle-widget.eagle-mobile-widget .eagle-mob-widget-content .egl-contract--top, .eagle-widget.eagle-mobile-widget .eagle-mob-widget-content .egl-handset--bottom, .eagle-widget.eagle-mobile-widget .eagle-mob-widget-content .egl-handset--top {
+	height: auto;
+}
+
+/* COMBO WIDGET FIX */
+@media (min-width: 768px) {
+	.eagle-widget .widget-combo .combo-row .combo-row--stock,
+.eagle-widget .widget-combo .combo-row:not(:first-of-type) .combo-row--cta {
+	width: 85px;
+	font-size: 12px;
+	}
+}
+.combo-powered-by {
+	font-size: 12px;
+}		</style>
+		
+				<link rel="prev" href="https://www.trustedreviews.com/reviews/iphone-x-performance-software" />
+				<link rel="next" href="https://www.trustedreviews.com/reviews/iphone-x-battery-life-verdict" />
+		</head>
+
+<body class="core_review-template-default single single-core_review postid-3333264 has-adverts ipc-adverts-library--venatus_loader y2021 m04 d08 h18 iphone-x-camera standard slim-header">
+
+<div class="parallax-wrapper parallax-wrapper--header"></div>
+
+      <!-- Google Tag Manager (noscript) -->
+      <noscript>
+        <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-K24XJLX"
+            height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+      </noscript>
+      <!-- End Google Tag Manager (noscript) -->
+      
+<div id="wrapper" class="hfeed">
+
+	
+			<header id="header" role="banner" class="header s-container has-single-tier">
+
+	<div class="header__inner">
+
+		
+						
+<div class="logo header-slot header-slot-">
+    <a href="/" title="Trusted Reviews" name="Trusted Reviews">
+    	<span class="hide">Trusted Reviews</span>
+	<picture>
+		<source media="(min-width: 728px)" srcset="https://www.trustedreviews.com/wp-content/uploads/sites/54/2019/08/trusted-reviews-logo-white-320x91.png" >
+		<source media="(max-width: 727px)" srcset="https://www.trustedreviews.com/wp-content/uploads/sites/54/2019/08/trusted-reviews-logo-white-320x91.png" >
+		<img src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2019/08/trusted-reviews-logo-white-320x91.png" alt="hero profile" aria-hidden="true" data-pin-nopin="true">
+	</picture>
+    </a>
+</div>
+
+		
+	</div>
+
+		<nav>
+	<ul class="navigation hide-overflow-items" data-nav="closed">
+					<li class="has-subnav">
+				<a href="/reviews" class= " "    name="Reviews">
+									Reviews
+								</a>
+									<span class="submenu-toggle icon-arrow-down"></span>
+					<ul class="navigation-secondary">
+													<li >
+								<a href="/reviews/mobile-phones"     name="Mobile Reviews">Mobile Reviews</a>
+															</li>
+													<li class="has-subnav">
+								<a href="/reviews/computing"     name="Computing Reviews">Computing Reviews</a>
+																	<span class="submenu-toggle icon-arrow-down"></span>
+									<ul class="navigation-tertiary">
+																					<li>
+												<a href="https://www.trustedreviews.com/reviews/laptops"     name="Laptop Reviews">Laptop Reviews</a>
+											</li>
+																					<li>
+												<a href="https://www.trustedreviews.com/reviews/peripherals"     name="Peripheral Reviews">Peripheral Reviews</a>
+											</li>
+																					<li>
+												<a href="https://www.trustedreviews.com/reviews/pc-components"     name="PC Component Reviews">PC Component Reviews</a>
+											</li>
+																					<li>
+												<a href="https://www.trustedreviews.com/reviews/desktop-pcs"     name="Desktop PC Reviews">Desktop PC Reviews</a>
+											</li>
+																					<li>
+												<a href="https://www.trustedreviews.com/reviews/monitors"     name="Monitor Reviews">Monitor Reviews</a>
+											</li>
+																					<li>
+												<a href="https://www.trustedreviews.com/reviews/routers-networking"     name="Router & Networking Reviews">Router & Networking Reviews</a>
+											</li>
+																					<li>
+												<a href="https://www.trustedreviews.com/tag/vpn"     name="VPN">VPN</a>
+											</li>
+																			</ul>
+															</li>
+													<li class="has-subnav">
+								<a href="/reviews/tvs-audio"     name="TV and Audio Reviews">TV and Audio Reviews</a>
+																	<span class="submenu-toggle icon-arrow-down"></span>
+									<ul class="navigation-tertiary">
+																					<li>
+												<a href="https://www.trustedreviews.com/reviews/headphones"     name="Headphone Reviews">Headphone Reviews</a>
+											</li>
+																					<li>
+												<a href="https://www.trustedreviews.com/reviews/sound-bars"     name="Sound Bar Reviews">Sound Bar Reviews</a>
+											</li>
+																					<li>
+												<a href="https://www.trustedreviews.com/reviews/surround-sound-systems"     name="Surround Sound System Reviews">Surround Sound System Reviews</a>
+											</li>
+																					<li>
+												<a href="https://www.trustedreviews.com/reviews/tvs"     name="TV Reviews">TV Reviews</a>
+											</li>
+																			</ul>
+															</li>
+													<li >
+								<a href="/reviews/gaming"     name="Gaming Reviews">Gaming Reviews</a>
+															</li>
+													<li class="has-subnav">
+								<a href="/reviews/home-appliances"     name="Home Appliance Reviews">Home Appliance Reviews</a>
+																	<span class="submenu-toggle icon-arrow-down"></span>
+									<ul class="navigation-tertiary">
+																					<li>
+												<a href="https://www.trustedreviews.com/reviews/vacuum-cleaners"     name="Vacuum Cleaner Reviews">Vacuum Cleaner Reviews</a>
+											</li>
+																					<li>
+												<a href="https://www.trustedreviews.com/reviews/smart-home"     name="Smart Home Reviews">Smart Home Reviews</a>
+											</li>
+																					<li>
+												<a href="https://www.trustedreviews.com/reviews/kitchen-gadgets"     name="Kitchen Gadget Reviews">Kitchen Gadget Reviews</a>
+											</li>
+																					<li>
+												<a href="https://www.trustedreviews.com/reviews/coffee-machines"     name="Coffee Machine Reviews">Coffee Machine Reviews</a>
+											</li>
+																					<li>
+												<a href="https://www.trustedreviews.com/reviews/large-appliance"     name="Large appliance Reviews">Large appliance Reviews</a>
+											</li>
+																			</ul>
+															</li>
+													<li >
+								<a href="/reviews/digital-cameras"     name="Camera Reviews">Camera Reviews</a>
+															</li>
+											</ul>
+							</li>
+					<li class="has-subnav">
+				<a href="/category/best" class= " "    name="Best Lists">
+									Best Lists
+								</a>
+									<span class="submenu-toggle icon-arrow-down"></span>
+					<ul class="navigation-secondary">
+													<li >
+								<a href="https://www.trustedreviews.com/category/best/televisions"     name="Best TVs">Best TVs</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/category/best/cameras"     name="Best Cameras">Best Cameras</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/category/best/audio"     name="Best Audio">Best Audio</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/category/best/computing"     name="Best Computing">Best Computing</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/category/best/gaming-consoles"     name="Best Gaming">Best Gaming</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/category/best/home-appliances"     name="Best Home Appliances">Best Home Appliances</a>
+															</li>
+											</ul>
+							</li>
+					<li >
+				<a href="/category/news" class= " "    name="News">
+									News
+								</a>
+							</li>
+					<li >
+				<a href="https://www.trustedreviews.com/category/how-to" class= " "    name="How to">
+									How to
+								</a>
+							</li>
+					<li >
+				<a href="/category/deals" class= " "    name="Deals">
+									Deals
+								</a>
+							</li>
+					<li >
+				<a href="/category/opinion" class= " "    name="Opinions">
+									Opinions
+								</a>
+							</li>
+					<li class="has-subnav">
+				<a href="" class= " "    name="Categories">
+									Categories
+								</a>
+									<span class="submenu-toggle icon-arrow-down"></span>
+					<ul class="navigation-secondary">
+													<li >
+								<a href="https://www.trustedreviews.com/mobile"     name="Phones">Phones</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/computing"     name="Computing">Computing</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/laptop"     name="Laptops">Laptops</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/home-appliances"     name="Home Tech">Home Tech</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/televisions"     name="TV">TV</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/audio"     name="Audio">Audio</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/gaming"     name="Games">Games</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/cameras"     name="Cameras">Cameras</a>
+															</li>
+											</ul>
+							</li>
+					<li class="has-subnav">
+				<a href="" class= " "    name="Brands">
+									Brands
+								</a>
+									<span class="submenu-toggle icon-arrow-down"></span>
+					<ul class="navigation-secondary">
+													<li >
+								<a href="https://www.trustedreviews.com/brands/apple"     name="Apple">Apple</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/brands/samsung"     name="Samsung">Samsung</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/brands/google"     name="Google">Google</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/brands/sony"     name="Sony">Sony</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/brands/microsoft"     name="Microsoft">Microsoft</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/brands/lg"     name="LG">LG</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/brands/panasonic"     name="Panasonic">Panasonic</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/brands/asus"     name="Asus">Asus</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/brands/nvidia"     name="Nvidia">Nvidia</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/brands/dyson"     name="Dyson">Dyson</a>
+															</li>
+											</ul>
+							</li>
+					<li >
+				<a href="https://www.trustedreviews.com/info/about-us-2-3982927" class= " "    name="About Us">
+									About Us
+								</a>
+							</li>
+					<li >
+				<a href="https://discountcodes.trustedreviews.com" class= " "    name="Discount Codes">
+									Discount Codes
+								</a>
+							</li>
+					<li >
+				<a href="https://comps.trustedreviews.com/" class= " "    name="Win">
+									Win
+								</a>
+							</li>
+		
+		
+		
+		<li class="menu-more has-subnav">
+			<a href="javascript:void(0)" name="See more menu items">
+				More
+				<svg class="menu-more-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17" preserveAspectRatio="xMidYMid meet"><path d="M17 9.3H9.3V17H7.7V9.3H0V7.7h7.7V0h1.6v7.7H17z"/></svg>
+			</a>
+			<ul></ul>
+		</li>
+	</ul>
+
+	<a href="javascript:void(0)" class="search-site" name="Search the site">
+		<svg class="search-site-icon" xmlns="http://www.w3.org/2000/svg" width="19" height="19" aria-hidden="true" focusable="false">
+			<path class="search-site-icon-inactive" d="M19 17.35L17.35 19l-5.55-5.55a7.5 7.5 0 01-2 1 7.2 7.2 0 01-2.33.37 7.34 7.34 0 01-2.89-.57 7.68 7.68 0 01-2.37-1.6 7.46 7.46 0 01-1.6-2.36A7.17 7.17 0 010 7.44a7.17 7.17 0 01.58-2.89 7.51 7.51 0 014-4A7.17 7.17 0 017.44 0a7.17 7.17 0 012.89.58 7.46 7.46 0 012.36 1.6 7.68 7.68 0 011.6 2.37 7.34 7.34 0 01.57 2.89 7.2 7.2 0 01-.37 2.33 7.5 7.5 0 01-1 2zM7.44 13.21a5.9 5.9 0 002.25-.44 6 6 0 003.08-3.08 6 6 0 000-4.51 6 6 0 00-1.25-1.83 5.47 5.47 0 00-1.83-1.23 5.64 5.64 0 00-4.51 0 5.47 5.47 0 00-1.83 1.23 5.47 5.47 0 00-1.23 1.83 5.64 5.64 0 000 4.51 5.47 5.47 0 001.23 1.83 6 6 0 001.83 1.25 5.87 5.87 0 002.26.44z"/>
+			<path class="search-site-icon-active" d="M10.76 9.5L19 17.74 17.74 19 9.5 10.76 1.26 19 0 17.74 8.24 9.5 0 1.26 1.26 0 9.5 8.24 17.74 0 19 1.26z"/>
+		</svg>
+		<span class="hide">Search</span>
+	</a>
+
+	<a href="javascript:void(0)" class="menu-icon-link hidden-md hidden-lg" name="Toggle the site menu">
+		<span class="menu-toggle">
+			<svg class="menu-toggle-icon" xmlns="http://www.w3.org/2000/svg" width="19" height="19" aria-hidden="true" focusable="false">
+				<path class="menu-toggle-icon-inactive" d="M19 0v2.71H0V0zM0 8.15h19v2.7H0zm0 8.14h19V19H0z"/>
+				<path class="menu-toggle-icon-active" d="M10.76 9.5L19 17.74 17.74 19 9.5 10.76 1.26 19 0 17.74 8.24 9.5 0 1.26 1.26 0 9.5 8.24 17.74 0 19 1.26z"/>
+			</svg>
+			<span class="hide">Menu</span>
+		</span>
+	</a>
+
+	<form role="search" method="get" class="search-form form-inline s-container" action="/">
+		<div class="input-group">
+			<input type="search" value="" name="s" class="input-sm search-field form-control" placeholder="Search">
+							<button type="submit" class="btn btn--sm" name="search">Search</button>
+						<div class="message-wrapper">
+				<label for="s" class="message message--type">Type to search</label>
+				<label for="s" class="message message--search hide">Press enter or click on the search icon</label>
+			</div>
+		</div>
+	</form>
+</nav>
+
+</header>	
+
+
+									<div class="trending">
+	<div class="trending__inner">
+		<div class="trending-list__outer">
+			<ul class="trending-list__inner">
+				<li>Trending:</li>
+									<li><a href="https://www.trustedreviews.com/reviews/iphone-12"  class="menu-item menu-item-type-custom menu-item-object-custom no-icon menu-item-3931060"     name="iPhone 12 Review">iPhone 12 Review</a></li>
+									<li><a href="https://www.trustedreviews.com/reviews/xbox-series-x"  class="menu-item menu-item-type-custom menu-item-object-custom first-menu-item no-icon menu-item-3922840"     name="Xbox Series X Review">Xbox Series X Review</a></li>
+									<li><a href="https://www.trustedreviews.com/reviews/ps5"  class="menu-item menu-item-type-custom menu-item-object-custom no-icon menu-item-3641029"     name="PS5 Review">PS5 Review</a></li>
+									<li><a href="https://www.trustedreviews.com/best/best-tv-3440232"  class="menu-item menu-item-type-custom menu-item-object-custom no-icon menu-item-3628349"     name="Best TV">Best TV</a></li>
+									<li><a href="https://www.trustedreviews.com/best/best-vpn-3470328"  class="menu-item menu-item-type-custom menu-item-object-custom no-icon menu-item-3969484"     name="Best VPN">Best VPN</a></li>
+									<li><a href="https://www.trustedreviews.com/best/best-iphone-3501342"  class="menu-item menu-item-type-custom menu-item-object-custom no-icon menu-item-3628352"     name="Best iPhone">Best iPhone</a></li>
+									<li><a href="https://www.trustedreviews.com/best/true-wireless-earbuds-3442893"  class="menu-item menu-item-type-custom menu-item-object-custom no-icon menu-item-3936304"     name="Best Wireless Earbuds">Best Wireless Earbuds</a></li>
+							</ul>
+		</div>
+		<div class="trending__fade trending__fade--before"></div>
+		<div class="trending__fade trending__fade--after"></div>
+	</div>
+</div>				
+	<div id="content" role="main" class="container-fluid" >
+		
+	<style>
+
+		.has-adverts {
+			margin-top: 0px !important;
+		}
+
+	</style>
+
+	
+
+					<nav class="breadcrumb s-container" role="navigation">
+    <div class="s-container__inner">
+        <ul>
+                            <li>
+                                            <a href="https://www.trustedreviews.com" name="Home">Home</a>
+                                    </li>
+
+                            <li>
+                                            <a href="https://www.trustedreviews.com/reviews" name="Reviews">Reviews</a>
+                                    </li>
+
+                            <li>
+                                            Camera
+                                    </li>
+
+                    </ul>
+    </div>
+</nav>	
+		<article class="post-3333264 core_review type-core_review status-publish hentry featured-video post" role="article"
+	>
+					<section id="custom_html-18" class="widget_text  s-container sticky-anchor widget_custom_html"><div class="textwidget custom-html-widget"><p style="text-align:center;max-width:100%;" data-nosnippet>We may earn a commission if you click a deal and buy an item.  <a href="https://www.trustedreviews.com/info/trusted-reviews-ethics-policy-3521647#how-we-make-money">This is how we make money.</a></p></div></section>
+		
+		<div class="post-main">
+
+				<header class="post-header post-header--article">
+		<h1 class="title-primary">
+												iPhone X Review - Camera Review
+									</h1>
+
+							
+					<div class="post-author">
+    <small class="post-author-info">
+                    
+            <span>
+                <a class="post-author__name url fn n" href="https://www.trustedreviews.com/author/max-parker" name="A post from Max Parker">
+                    <span class="author vcard">Max Parker</span>
+                </a>
+                                    <a rel="me noopener" href="https://twitter.com/parkermax" target="_blank" class="post-author__icon--twitter" name="Visit the authors Twitter" onClick="kiara.onTwitterIconClick(`Max Parker`)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 512.002 512.002" style="enable-background:new 0 0 512.002 512.002;" xml:space="preserve">
+                            <path d="M500.398,94.784c-8.043,3.567-16.313,6.578-24.763,9.023c10.004-11.314,17.631-24.626,22.287-39.193 c1.044-3.265-0.038-6.839-2.722-8.975c-2.681-2.137-6.405-2.393-9.356-0.644c-17.945,10.643-37.305,18.292-57.605,22.764 c-20.449-19.981-48.222-31.353-76.934-31.353c-60.606,0-109.913,49.306-109.913,109.91c0,4.773,0.302,9.52,0.9,14.201 c-75.206-6.603-145.124-43.568-193.136-102.463c-1.711-2.099-4.347-3.231-7.046-3.014c-2.7,0.211-5.127,1.734-6.491,4.075 c-9.738,16.709-14.886,35.82-14.886,55.265c0,26.484,9.455,51.611,26.158,71.246c-5.079-1.759-10.007-3.957-14.711-6.568 c-2.525-1.406-5.607-1.384-8.116,0.054c-2.51,1.439-4.084,4.084-4.151,6.976c-0.012,0.487-0.012,0.974-0.012,1.468 c0,39.531,21.276,75.122,53.805,94.52c-2.795-0.279-5.587-0.684-8.362-1.214c-2.861-0.547-5.802,0.456-7.731,2.638 c-1.932,2.18-2.572,5.219-1.681,7.994c12.04,37.591,43.039,65.24,80.514,73.67c-31.082,19.468-66.626,29.665-103.939,29.665 c-7.786,0-15.616-0.457-23.279-1.364c-3.807-0.453-7.447,1.795-8.744,5.416c-1.297,3.622,0.078,7.66,3.316,9.736 c47.935,30.735,103.361,46.98,160.284,46.98c111.903,0,181.907-52.769,220.926-97.037c48.657-55.199,76.562-128.261,76.562-200.451 c0-3.016-0.046-6.061-0.139-9.097c19.197-14.463,35.724-31.967,49.173-52.085c2.043-3.055,1.822-7.094-0.545-9.906 C507.7,94.204,503.76,93.294,500.398,94.784z"/>
+                        </svg>
+                        <span class="visuallyhidden">Contact via Twitter</span>
+                    </a>
+                                <span class="vertical-bar">&vert;</span>
+            </span>
+
+        
+        
+                            <span>
+                                <time datetime="2020-11-24T16:58:41+00:00">November 24, 2020 4:58 pm GMT</time>
+            </span>
+            </small>
+</div>		
+		<div class="review__icons">
+
+								<div class="review-rating--score">
+		
+		
+		
+		
+					<div class="score-stars score-stars--large">
+																		<svg class="star star-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30.81 29" preserveAspectRatio="xMidYMid meet"><path d="M15.41 0L19 11.07h11.81l-9.51 6.86L24.92 29l-9.51-6.85L5.89 29l3.63-11.07L0 11.07h11.78z"/></svg>
+																																			<svg class="star star-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30.81 29" preserveAspectRatio="xMidYMid meet"><path d="M15.41 0L19 11.07h11.81l-9.51 6.86L24.92 29l-9.51-6.85L5.89 29l3.63-11.07L0 11.07h11.78z"/></svg>
+																																			<svg class="star star-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30.81 29" preserveAspectRatio="xMidYMid meet"><path d="M15.41 0L19 11.07h11.81l-9.51 6.86L24.92 29l-9.51-6.85L5.89 29l3.63-11.07L0 11.07h11.78z"/></svg>
+																																			<svg class="star star-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30.81 29" preserveAspectRatio="xMidYMid meet"><path d="M15.41 0L19 11.07h11.81l-9.51 6.86L24.92 29l-9.51-6.85L5.89 29l3.63-11.07L0 11.07h11.78z"/></svg>
+																																							<svg class="star star-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30.81 29" preserveAspectRatio="xMidYMid meet"><path d="M30.81 11.07l-9.51 6.86L24.92 29l-9.51-6.85L5.89 29l3.63-11.07L0 11.07h11.78L15.41 0 19 11.07zm-9.34 13.2l-2.33-7 6-4.33h-7.41l-2.32-7.13v14.1z"/></svg>
+																			</div>
+
+		</div>
+			
+			
+				<div class="social-share">
+
+										
+																														<ul class="pw-widget hidden-xs">
+															<li>
+									<a
+										href="https://www.facebook.com/sharer/sharer.php?u=https://www.trustedreviews.com/reviews/iphone-x-camera"
+										target="_blank"
+										 rel="noopener" 										class="share-button "
+										data-url="https://www.trustedreviews.com/reviews/iphone-x-camera"
+										name="Share this page on facebook"
+									>
+																					<svg xmlns="http://www.w3.org/2000/svg" width="13" height="25" viewBox="88.428 12.828 107.543 207.085"><path d="M158.232 219.912v-94.461h31.707l4.747-36.813h-36.454V65.134c0-10.658 2.96-17.922 18.245-17.922l19.494-.009V14.278c-3.373-.447-14.944-1.449-28.406-1.449-28.106 0-47.348 17.155-47.348 48.661v27.149H88.428v36.813h31.788v94.461l38.016-.001z" fill="#3c5a9a"/></svg>
+																			</a>
+								</li>
+															<li>
+									<a
+										href="https://twitter.com/intent/tweet?url=https://www.trustedreviews.com/reviews/iphone-x-camera&text=Camera Review"
+										target="_blank"
+										 rel="noopener" 										class="share-button "
+										data-url="https://www.trustedreviews.com/reviews/iphone-x-camera"
+										name="Share this page on twitter"
+									>
+																					<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 512.002 512.002" style="enable-background:new 0 0 512.002 512.002;" xml:space="preserve"><path style="fill:#73A1FB;" d="M500.398,94.784c-8.043,3.567-16.313,6.578-24.763,9.023c10.004-11.314,17.631-24.626,22.287-39.193 c1.044-3.265-0.038-6.839-2.722-8.975c-2.681-2.137-6.405-2.393-9.356-0.644c-17.945,10.643-37.305,18.292-57.605,22.764 c-20.449-19.981-48.222-31.353-76.934-31.353c-60.606,0-109.913,49.306-109.913,109.91c0,4.773,0.302,9.52,0.9,14.201 c-75.206-6.603-145.124-43.568-193.136-102.463c-1.711-2.099-4.347-3.231-7.046-3.014c-2.7,0.211-5.127,1.734-6.491,4.075 c-9.738,16.709-14.886,35.82-14.886,55.265c0,26.484,9.455,51.611,26.158,71.246c-5.079-1.759-10.007-3.957-14.711-6.568 c-2.525-1.406-5.607-1.384-8.116,0.054c-2.51,1.439-4.084,4.084-4.151,6.976c-0.012,0.487-0.012,0.974-0.012,1.468 c0,39.531,21.276,75.122,53.805,94.52c-2.795-0.279-5.587-0.684-8.362-1.214c-2.861-0.547-5.802,0.456-7.731,2.638 c-1.932,2.18-2.572,5.219-1.681,7.994c12.04,37.591,43.039,65.24,80.514,73.67c-31.082,19.468-66.626,29.665-103.939,29.665 c-7.786,0-15.616-0.457-23.279-1.364c-3.807-0.453-7.447,1.795-8.744,5.416c-1.297,3.622,0.078,7.66,3.316,9.736 c47.935,30.735,103.361,46.98,160.284,46.98c111.903,0,181.907-52.769,220.926-97.037c48.657-55.199,76.562-128.261,76.562-200.451 c0-3.016-0.046-6.061-0.139-9.097c19.197-14.463,35.724-31.967,49.173-52.085c2.043-3.055,1.822-7.094-0.545-9.906 C507.7,94.204,503.76,93.294,500.398,94.784z"/></svg>
+																			</a>
+								</li>
+															<li>
+									<a
+										href="https://pinterest.com/pin/create/button/?url=https://www.trustedreviews.com/reviews/iphone-x-camera&description=Camera Review"
+										target="_blank"
+										 rel="noopener" 										class="share-button "
+										data-url="https://www.trustedreviews.com/reviews/iphone-x-camera"
+										name="Share this page on pinterest"
+									>
+																					<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 512.883 512.883" style="enable-background:new 0 0 512.883 512.883;" xml:space="preserve"> <path style="fill:#CB1F24;" d="M256.441,0c-141.241,0-256,114.759-256,256c0,105.048,62.676,195.09,153.6,234.814 c-0.883-17.655,0-39.724,4.414-59.145c5.297-21.186,32.662-139.476,32.662-139.476s-7.945-16.772-7.945-40.607 c0-37.959,22.069-66.207,49.434-66.207c22.952,0,34.428,17.655,34.428,38.841c0,22.952-15.007,58.262-22.952,90.924 c-6.179,27.366,13.241,49.434,40.607,49.434c48.552,0,81.214-62.676,81.214-135.945c0-56.497-37.959-97.986-106.814-97.986 c-77.683,0-126.234,58.262-126.234,122.703c0,22.069,6.179,37.959,16.772,50.317c4.414,5.297,5.297,7.945,3.531,14.124 c-0.883,4.414-4.414,15.89-5.297,20.303c-1.766,6.179-7.062,8.828-13.241,6.179c-36.193-15.007-52.083-53.848-52.083-97.986 c0-72.386,60.91-159.779,182.731-159.779c97.986,0,162.428,70.621,162.428,146.538c0,100.634-55.614,175.669-137.71,175.669 c-27.366,0-53.848-15.007-62.676-31.779c0,0-15.007,59.145-17.655,70.621c-5.297,19.421-15.89,39.724-25.6,54.731 c22.952,7.062,47.669,10.593,72.386,10.593c141.241,0,256-114.759,256-256S397.683,0,256.441,0"/></svg>
+																			</a>
+								</li>
+																				</ul>
+																														<ul class="pw-widget hidden-sm hidden-md hidden-lg">
+															<li>
+									<a
+										href="https://www.facebook.com/sharer/sharer.php?u=https://www.trustedreviews.com/reviews/iphone-x-camera"
+										target="_blank"
+										 rel="noopener" 										class="share-button "
+										data-url="https://www.trustedreviews.com/reviews/iphone-x-camera"
+										name="Share this page on facebook"
+									>
+																					<svg xmlns="http://www.w3.org/2000/svg" width="13" height="25" viewBox="88.428 12.828 107.543 207.085"><path d="M158.232 219.912v-94.461h31.707l4.747-36.813h-36.454V65.134c0-10.658 2.96-17.922 18.245-17.922l19.494-.009V14.278c-3.373-.447-14.944-1.449-28.406-1.449-28.106 0-47.348 17.155-47.348 48.661v27.149H88.428v36.813h31.788v94.461l38.016-.001z" fill="#3c5a9a"/></svg>
+																			</a>
+								</li>
+															<li>
+									<a
+										href="https://twitter.com/intent/tweet?url=https://www.trustedreviews.com/reviews/iphone-x-camera&text=Camera Review"
+										target="_blank"
+										 rel="noopener" 										class="share-button "
+										data-url="https://www.trustedreviews.com/reviews/iphone-x-camera"
+										name="Share this page on twitter"
+									>
+																					<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 512.002 512.002" style="enable-background:new 0 0 512.002 512.002;" xml:space="preserve"><path style="fill:#73A1FB;" d="M500.398,94.784c-8.043,3.567-16.313,6.578-24.763,9.023c10.004-11.314,17.631-24.626,22.287-39.193 c1.044-3.265-0.038-6.839-2.722-8.975c-2.681-2.137-6.405-2.393-9.356-0.644c-17.945,10.643-37.305,18.292-57.605,22.764 c-20.449-19.981-48.222-31.353-76.934-31.353c-60.606,0-109.913,49.306-109.913,109.91c0,4.773,0.302,9.52,0.9,14.201 c-75.206-6.603-145.124-43.568-193.136-102.463c-1.711-2.099-4.347-3.231-7.046-3.014c-2.7,0.211-5.127,1.734-6.491,4.075 c-9.738,16.709-14.886,35.82-14.886,55.265c0,26.484,9.455,51.611,26.158,71.246c-5.079-1.759-10.007-3.957-14.711-6.568 c-2.525-1.406-5.607-1.384-8.116,0.054c-2.51,1.439-4.084,4.084-4.151,6.976c-0.012,0.487-0.012,0.974-0.012,1.468 c0,39.531,21.276,75.122,53.805,94.52c-2.795-0.279-5.587-0.684-8.362-1.214c-2.861-0.547-5.802,0.456-7.731,2.638 c-1.932,2.18-2.572,5.219-1.681,7.994c12.04,37.591,43.039,65.24,80.514,73.67c-31.082,19.468-66.626,29.665-103.939,29.665 c-7.786,0-15.616-0.457-23.279-1.364c-3.807-0.453-7.447,1.795-8.744,5.416c-1.297,3.622,0.078,7.66,3.316,9.736 c47.935,30.735,103.361,46.98,160.284,46.98c111.903,0,181.907-52.769,220.926-97.037c48.657-55.199,76.562-128.261,76.562-200.451 c0-3.016-0.046-6.061-0.139-9.097c19.197-14.463,35.724-31.967,49.173-52.085c2.043-3.055,1.822-7.094-0.545-9.906 C507.7,94.204,503.76,93.294,500.398,94.784z"/></svg>
+																			</a>
+								</li>
+															<li>
+									<a
+										href="https://pinterest.com/pin/create/button/?url=https://www.trustedreviews.com/reviews/iphone-x-camera&description=Camera Review"
+										target="_blank"
+										 rel="noopener" 										class="share-button "
+										data-url="https://www.trustedreviews.com/reviews/iphone-x-camera"
+										name="Share this page on pinterest"
+									>
+																					<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 512.883 512.883" style="enable-background:new 0 0 512.883 512.883;" xml:space="preserve"> <path style="fill:#CB1F24;" d="M256.441,0c-141.241,0-256,114.759-256,256c0,105.048,62.676,195.09,153.6,234.814 c-0.883-17.655,0-39.724,4.414-59.145c5.297-21.186,32.662-139.476,32.662-139.476s-7.945-16.772-7.945-40.607 c0-37.959,22.069-66.207,49.434-66.207c22.952,0,34.428,17.655,34.428,38.841c0,22.952-15.007,58.262-22.952,90.924 c-6.179,27.366,13.241,49.434,40.607,49.434c48.552,0,81.214-62.676,81.214-135.945c0-56.497-37.959-97.986-106.814-97.986 c-77.683,0-126.234,58.262-126.234,122.703c0,22.069,6.179,37.959,16.772,50.317c4.414,5.297,5.297,7.945,3.531,14.124 c-0.883,4.414-4.414,15.89-5.297,20.303c-1.766,6.179-7.062,8.828-13.241,6.179c-36.193-15.007-52.083-53.848-52.083-97.986 c0-72.386,60.91-159.779,182.731-159.779c97.986,0,162.428,70.621,162.428,146.538c0,100.634-55.614,175.669-137.71,175.669 c-27.366,0-53.848-15.007-62.676-31.779c0,0-15.007,59.145-17.655,70.621c-5.297,19.421-15.89,39.724-25.6,54.731 c22.952,7.062,47.669,10.593,72.386,10.593c141.241,0,256-114.759,256-256S397.683,0,256.441,0"/></svg>
+																			</a>
+								</li>
+																				</ul>
+					
+				</div>
+
+			
+			
+			                                <div class="post__award">
+	
+	
+	</div>                        		</div>
+
+	</header>
+
+			
+			<div class="post-main__inner">
+
+				
+					<div class="featured-media ggnoads">
+			</div>
+
+				
+				<div class="slot-wrapper slot-wrapper--full">
+					<div id="venatus__header-1__0" class="ipc-advert venatus-placeholder ipc-advert-header-1">
+					<script type="text/javascript">
+						var ipcVenatusQueue = window.ipcVenatusQueue || [];
+						ipcVenatusQueue.push( {"div_id":"venatus__header-1__0","placement_ids":{"mobile":{"id":"5f5a140790f8c727f173ace9","css":{"min-height":"50px"}},"desktop":{"id":"5f5a13e7ebf74d173c00cdcd","css":{"min-height":"250px"}}}} );
+					</script>
+				</div>				</div>
+
+				<div class="post-body">
+
+					<div class="social-share social-share--sticky">
+
+												
+																																			<ul class="pw-widget hidden-xs">
+																	<li>
+										<a
+											href="https://www.facebook.com/sharer/sharer.php?u=https://www.trustedreviews.com/reviews/iphone-x-camera"
+											target="_blank"
+											 rel="noopener" 											class="share-button "
+											data-url="https://www.trustedreviews.com/reviews/iphone-x-camera"
+											name="Share this page on facebook"
+										>
+																							<svg xmlns="http://www.w3.org/2000/svg" width="13" height="25" viewBox="88.428 12.828 107.543 207.085"><path d="M158.232 219.912v-94.461h31.707l4.747-36.813h-36.454V65.134c0-10.658 2.96-17.922 18.245-17.922l19.494-.009V14.278c-3.373-.447-14.944-1.449-28.406-1.449-28.106 0-47.348 17.155-47.348 48.661v27.149H88.428v36.813h31.788v94.461l38.016-.001z" fill="#3c5a9a"/></svg>
+																					</a>
+									</li>
+																	<li>
+										<a
+											href="https://twitter.com/intent/tweet?url=https://www.trustedreviews.com/reviews/iphone-x-camera&text=Camera Review"
+											target="_blank"
+											 rel="noopener" 											class="share-button "
+											data-url="https://www.trustedreviews.com/reviews/iphone-x-camera"
+											name="Share this page on twitter"
+										>
+																							<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 512.002 512.002" style="enable-background:new 0 0 512.002 512.002;" xml:space="preserve"><path style="fill:#73A1FB;" d="M500.398,94.784c-8.043,3.567-16.313,6.578-24.763,9.023c10.004-11.314,17.631-24.626,22.287-39.193 c1.044-3.265-0.038-6.839-2.722-8.975c-2.681-2.137-6.405-2.393-9.356-0.644c-17.945,10.643-37.305,18.292-57.605,22.764 c-20.449-19.981-48.222-31.353-76.934-31.353c-60.606,0-109.913,49.306-109.913,109.91c0,4.773,0.302,9.52,0.9,14.201 c-75.206-6.603-145.124-43.568-193.136-102.463c-1.711-2.099-4.347-3.231-7.046-3.014c-2.7,0.211-5.127,1.734-6.491,4.075 c-9.738,16.709-14.886,35.82-14.886,55.265c0,26.484,9.455,51.611,26.158,71.246c-5.079-1.759-10.007-3.957-14.711-6.568 c-2.525-1.406-5.607-1.384-8.116,0.054c-2.51,1.439-4.084,4.084-4.151,6.976c-0.012,0.487-0.012,0.974-0.012,1.468 c0,39.531,21.276,75.122,53.805,94.52c-2.795-0.279-5.587-0.684-8.362-1.214c-2.861-0.547-5.802,0.456-7.731,2.638 c-1.932,2.18-2.572,5.219-1.681,7.994c12.04,37.591,43.039,65.24,80.514,73.67c-31.082,19.468-66.626,29.665-103.939,29.665 c-7.786,0-15.616-0.457-23.279-1.364c-3.807-0.453-7.447,1.795-8.744,5.416c-1.297,3.622,0.078,7.66,3.316,9.736 c47.935,30.735,103.361,46.98,160.284,46.98c111.903,0,181.907-52.769,220.926-97.037c48.657-55.199,76.562-128.261,76.562-200.451 c0-3.016-0.046-6.061-0.139-9.097c19.197-14.463,35.724-31.967,49.173-52.085c2.043-3.055,1.822-7.094-0.545-9.906 C507.7,94.204,503.76,93.294,500.398,94.784z"/></svg>
+																					</a>
+									</li>
+																	<li>
+										<a
+											href="https://pinterest.com/pin/create/button/?url=https://www.trustedreviews.com/reviews/iphone-x-camera&description=Camera Review"
+											target="_blank"
+											 rel="noopener" 											class="share-button "
+											data-url="https://www.trustedreviews.com/reviews/iphone-x-camera"
+											name="Share this page on pinterest"
+										>
+																							<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 512.883 512.883" style="enable-background:new 0 0 512.883 512.883;" xml:space="preserve"> <path style="fill:#CB1F24;" d="M256.441,0c-141.241,0-256,114.759-256,256c0,105.048,62.676,195.09,153.6,234.814 c-0.883-17.655,0-39.724,4.414-59.145c5.297-21.186,32.662-139.476,32.662-139.476s-7.945-16.772-7.945-40.607 c0-37.959,22.069-66.207,49.434-66.207c22.952,0,34.428,17.655,34.428,38.841c0,22.952-15.007,58.262-22.952,90.924 c-6.179,27.366,13.241,49.434,40.607,49.434c48.552,0,81.214-62.676,81.214-135.945c0-56.497-37.959-97.986-106.814-97.986 c-77.683,0-126.234,58.262-126.234,122.703c0,22.069,6.179,37.959,16.772,50.317c4.414,5.297,5.297,7.945,3.531,14.124 c-0.883,4.414-4.414,15.89-5.297,20.303c-1.766,6.179-7.062,8.828-13.241,6.179c-36.193-15.007-52.083-53.848-52.083-97.986 c0-72.386,60.91-159.779,182.731-159.779c97.986,0,162.428,70.621,162.428,146.538c0,100.634-55.614,175.669-137.71,175.669 c-27.366,0-53.848-15.007-62.676-31.779c0,0-15.007,59.145-17.655,70.621c-5.297,19.421-15.89,39.724-25.6,54.731 c22.952,7.062,47.669,10.593,72.386,10.593c141.241,0,256-114.759,256-256S397.683,0,256.441,0"/></svg>
+																					</a>
+									</li>
+																							</ul>
+																																			<ul class="pw-widget hidden-sm hidden-md hidden-lg">
+																	<li>
+										<a
+											href="https://www.facebook.com/sharer/sharer.php?u=https://www.trustedreviews.com/reviews/iphone-x-camera"
+											target="_blank"
+											 rel="noopener" 											class="share-button "
+											data-url="https://www.trustedreviews.com/reviews/iphone-x-camera"
+											name="Share this page on facebook"
+										>
+																							<svg xmlns="http://www.w3.org/2000/svg" width="13" height="25" viewBox="88.428 12.828 107.543 207.085"><path d="M158.232 219.912v-94.461h31.707l4.747-36.813h-36.454V65.134c0-10.658 2.96-17.922 18.245-17.922l19.494-.009V14.278c-3.373-.447-14.944-1.449-28.406-1.449-28.106 0-47.348 17.155-47.348 48.661v27.149H88.428v36.813h31.788v94.461l38.016-.001z" fill="#3c5a9a"/></svg>
+																					</a>
+									</li>
+																	<li>
+										<a
+											href="https://twitter.com/intent/tweet?url=https://www.trustedreviews.com/reviews/iphone-x-camera&text=Camera Review"
+											target="_blank"
+											 rel="noopener" 											class="share-button "
+											data-url="https://www.trustedreviews.com/reviews/iphone-x-camera"
+											name="Share this page on twitter"
+										>
+																							<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 512.002 512.002" style="enable-background:new 0 0 512.002 512.002;" xml:space="preserve"><path style="fill:#73A1FB;" d="M500.398,94.784c-8.043,3.567-16.313,6.578-24.763,9.023c10.004-11.314,17.631-24.626,22.287-39.193 c1.044-3.265-0.038-6.839-2.722-8.975c-2.681-2.137-6.405-2.393-9.356-0.644c-17.945,10.643-37.305,18.292-57.605,22.764 c-20.449-19.981-48.222-31.353-76.934-31.353c-60.606,0-109.913,49.306-109.913,109.91c0,4.773,0.302,9.52,0.9,14.201 c-75.206-6.603-145.124-43.568-193.136-102.463c-1.711-2.099-4.347-3.231-7.046-3.014c-2.7,0.211-5.127,1.734-6.491,4.075 c-9.738,16.709-14.886,35.82-14.886,55.265c0,26.484,9.455,51.611,26.158,71.246c-5.079-1.759-10.007-3.957-14.711-6.568 c-2.525-1.406-5.607-1.384-8.116,0.054c-2.51,1.439-4.084,4.084-4.151,6.976c-0.012,0.487-0.012,0.974-0.012,1.468 c0,39.531,21.276,75.122,53.805,94.52c-2.795-0.279-5.587-0.684-8.362-1.214c-2.861-0.547-5.802,0.456-7.731,2.638 c-1.932,2.18-2.572,5.219-1.681,7.994c12.04,37.591,43.039,65.24,80.514,73.67c-31.082,19.468-66.626,29.665-103.939,29.665 c-7.786,0-15.616-0.457-23.279-1.364c-3.807-0.453-7.447,1.795-8.744,5.416c-1.297,3.622,0.078,7.66,3.316,9.736 c47.935,30.735,103.361,46.98,160.284,46.98c111.903,0,181.907-52.769,220.926-97.037c48.657-55.199,76.562-128.261,76.562-200.451 c0-3.016-0.046-6.061-0.139-9.097c19.197-14.463,35.724-31.967,49.173-52.085c2.043-3.055,1.822-7.094-0.545-9.906 C507.7,94.204,503.76,93.294,500.398,94.784z"/></svg>
+																					</a>
+									</li>
+																	<li>
+										<a
+											href="https://pinterest.com/pin/create/button/?url=https://www.trustedreviews.com/reviews/iphone-x-camera&description=Camera Review"
+											target="_blank"
+											 rel="noopener" 											class="share-button "
+											data-url="https://www.trustedreviews.com/reviews/iphone-x-camera"
+											name="Share this page on pinterest"
+										>
+																							<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 512.883 512.883" style="enable-background:new 0 0 512.883 512.883;" xml:space="preserve"> <path style="fill:#CB1F24;" d="M256.441,0c-141.241,0-256,114.759-256,256c0,105.048,62.676,195.09,153.6,234.814 c-0.883-17.655,0-39.724,4.414-59.145c5.297-21.186,32.662-139.476,32.662-139.476s-7.945-16.772-7.945-40.607 c0-37.959,22.069-66.207,49.434-66.207c22.952,0,34.428,17.655,34.428,38.841c0,22.952-15.007,58.262-22.952,90.924 c-6.179,27.366,13.241,49.434,40.607,49.434c48.552,0,81.214-62.676,81.214-135.945c0-56.497-37.959-97.986-106.814-97.986 c-77.683,0-126.234,58.262-126.234,122.703c0,22.069,6.179,37.959,16.772,50.317c4.414,5.297,5.297,7.945,3.531,14.124 c-0.883,4.414-4.414,15.89-5.297,20.303c-1.766,6.179-7.062,8.828-13.241,6.179c-36.193-15.007-52.083-53.848-52.083-97.986 c0-72.386,60.91-159.779,182.731-159.779c97.986,0,162.428,70.621,162.428,146.538c0,100.634-55.614,175.669-137.71,175.669 c-27.366,0-53.848-15.007-62.676-31.779c0,0-15.007,59.145-17.655,70.621c-5.297,19.421-15.89,39.724-25.6,54.731 c22.952,7.062,47.669,10.593,72.386,10.593c141.241,0,256-114.759,256-256S397.683,0,256.441,0"/></svg>
+																					</a>
+									</li>
+																							</ul>
+						
+					</div>
+
+					<div class="articleBody">
+																			
+						
+						
+								<div class="review-sections">
+		<h2>Sections</h2>
+		<ul>
+							<li>
+					<span>Page 1</span>
+											<a href="https://www.trustedreviews.com/reviews/iphone-x-review" name="iPhone X Review">iPhone X Review</a>
+									</li>
+							<li>
+					<span>Page 2</span>
+											<a href="https://www.trustedreviews.com/reviews/iphone-x-performance-software" name="Performance and Software Review">Performance and Software Review</a>
+									</li>
+							<li>
+					<span>Page 3</span>
+											<span>Camera Review</span>
+									</li>
+							<li>
+					<span>Page 4</span>
+											<a href="https://www.trustedreviews.com/reviews/iphone-x-battery-life-verdict" name="Battery life and Verdict Review">Battery life and Verdict Review</a>
+									</li>
+					</ul>
+	</div>
+
+	
+	
+
+	
+
+	
+<h2><b>iPhone X Camera – A dual 12-megapixel sensor and great video</b></h2>
+<p><!-- Begin Mailchimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<style type="text/css">
+	#mc-embedded-subscribe-form input[type=checkbox]{display: inline; width: auto;margin-right: 10px;}
+	#mergeRow-gdpr {margin-top: 20px;}
+	#mergeRow-gdpr fieldset label {font-weight: normal;}
+	#mc-embedded-subscribe-form .mc_fieldset{border:none;min-height: 0px;padding-bottom:0px;}
+</style>
+<div id="mc_embed_signup">
+<form action="https://trustedreviews.us17.list-manage.com/subscribe/post?u=01ecb3d6dd88dbdae86b74b74&amp;id=3885cc528a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	<label for="mce-EMAIL">Subscribe to our newsletter</label>
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_01ecb3d6dd88dbdae86b74b74_3885cc528a" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+<!--End mc_embed_signup--></p>
+<p><span style="font-weight: 400">The iPhone X has dual 12-megapixel cameras on the rear, as there are in the <a href="https://www.trustedreviews.com/reviews/iphone-8-plus">iPhone 8 Plus</a>, and that makes it the smallest iPhone yet to benefit from two sensors.</span></p>
+<p><img class="lazyload blur-up alignnone size-large wp-image-3333201" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/DSCF9452-1024x683.jpg" alt="iPhone X" width="630" height="420" data-sizes="auto" data-srcset="https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/DSCF9452-1024x683.jpg 1024w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/DSCF9452-300x200.jpg 300w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/DSCF9452-768x512.jpg 768w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/DSCF9452-320x213.jpg 320w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/DSCF9452-620x413.jpg 620w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/DSCF9452-920x613.jpg 920w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/DSCF9452-1220x813.jpg 1220w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/DSCF9452-1620x1080.jpg 1620w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/DSCF9452-1920x1280.jpg 1920w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/DSCF9452-630x420.jpg 630w" sizes="(max-width: 630px) 100vw, 630px" /></p>
+<p><span style="font-weight: 400">The main wide-angle camera is optically stabilised with an f/1.8 aperture – as seen in other 2017 iPhones – but the telephoto lens has been updated. It’s also now optically stabilised, with the aperture widened from f/2.8 to f/2.4. Both upgrades make the camera a much better performer in low-light, an area in which iPhone cameras have been found wanting in the past.</span></p>
+<p><span style="font-weight: 400">Apple says it has completely rebuilt the sensor, making it larger and faster, and there’s a new ISP (image signal processor) for better textures and colours.</span></p>
+<p><span style="font-weight: 400">Photos taken with the main camera are truly excellent. Pictures are more saturated than previous iPhones, although not to Samsung’s level, with vivid colours and lovely dynamic range. This makes it excellent for landscape shots, offering a fantastic feeling of depth.</span></p>
+<p><strong>Related: <a href="https://www.trustedreviews.com/best/best-camera-phones-3520817">Best camera phones</a></strong></p>
+<div id="attachment_3333210" style="width: 640px" class="wp-caption alignnone"><img aria-describedby="caption-attachment-3333210" class="lazyload blur-up size-large wp-image-3333210" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0330-1024x768.jpg" alt="iPhone X Photo sample" width="630" height="473" data-sizes="auto" data-srcset="https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0330-1024x768.jpg 1024w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0330-300x225.jpg 300w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0330-768x576.jpg 768w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0330-320x240.jpg 320w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0330-620x465.jpg 620w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0330-920x690.jpg 920w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0330-1220x915.jpg 1220w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0330-1620x1215.jpg 1620w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0330-1920x1440.jpg 1920w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0330-630x473.jpg 630w" sizes="(max-width: 630px) 100vw, 630px" /><p id="caption-attachment-3333210" class="wp-caption-text">The range between the light and dark colours is excellent</p></div>
+<div id="attachment_3333209" style="width: 640px" class="wp-caption alignnone"><img aria-describedby="caption-attachment-3333209" class="lazyload blur-up size-large wp-image-3333209" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_3721-1024x768.jpg" alt="iPhone X Photo sample" width="630" height="473" data-sizes="auto" data-srcset="https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_3721-1024x768.jpg 1024w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_3721-300x225.jpg 300w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_3721-768x576.jpg 768w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_3721-320x240.jpg 320w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_3721-620x465.jpg 620w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_3721-920x690.jpg 920w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_3721-1220x915.jpg 1220w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_3721-1620x1215.jpg 1620w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_3721-1920x1440.jpg 1920w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_3721-630x473.jpg 630w" sizes="(max-width: 630px) 100vw, 630px" /><p id="caption-attachment-3333209" class="wp-caption-text">It manages to not overexpose, and colours look lovely</p></div>
+<div id="attachment_3333208" style="width: 640px" class="wp-caption alignnone"><img aria-describedby="caption-attachment-3333208" class="lazyload blur-up size-large wp-image-3333208" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_7347-1024x768.jpg" alt="iPhone X Photo sample" width="630" height="473" data-sizes="auto" data-srcset="https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_7347-1024x768.jpg 1024w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_7347-300x225.jpg 300w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_7347-768x576.jpg 768w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_7347-320x240.jpg 320w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_7347-620x465.jpg 620w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_7347-920x690.jpg 920w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_7347-1220x915.jpg 1220w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_7347-1620x1215.jpg 1620w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_7347-1920x1440.jpg 1920w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_7347-630x473.jpg 630w" sizes="(max-width: 630px) 100vw, 630px" /><p id="caption-attachment-3333208" class="wp-caption-text">There&#8217;s load of depth to photos with lots in the distance</p></div>
+<div id="attachment_3333207" style="width: 640px" class="wp-caption alignnone"><img aria-describedby="caption-attachment-3333207" class="lazyload blur-up size-large wp-image-3333207" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_2299-1024x768.jpg" alt="iPhone X Photo sample" width="630" height="473" data-sizes="auto" data-srcset="https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_2299-1024x768.jpg 1024w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_2299-300x225.jpg 300w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_2299-768x576.jpg 768w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_2299-320x240.jpg 320w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_2299-620x465.jpg 620w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_2299-920x690.jpg 920w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_2299-1220x915.jpg 1220w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_2299-1620x1215.jpg 1620w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_2299-1920x1440.jpg 1920w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_2299-630x473.jpg 630w" sizes="(max-width: 630px) 100vw, 630px" /><p id="caption-attachment-3333207" class="wp-caption-text">Landscape shots look stunning, even in 2x zoom</p></div>
+<p><span style="font-weight: 400">There isn’t really a situation where I haven’t been impressed by the camera on the iPhone X. In low light it produces clean, crisp images with minimal noise, and it doesn’t resort to overexposing light sources.</span></p>
+<p><span style="font-weight: 400">It’s great for portraits, too, especially with the vastly improved secondary camera and the constantly evolving Portrait mode. The wider aperture and added OIS mean you can now take portraits even with when the light isn’t great, with excellent results.</span></p>
+
+<div id="attachment_3333212" style="width: 640px" class="wp-caption alignnone"><img aria-describedby="caption-attachment-3333212" class="lazyload blur-up size-large wp-image-3333212" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_5280-1024x768.jpg" alt="iPhone X Photo sample" width="630" height="473" data-sizes="auto" data-srcset="https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_5280-1024x768.jpg 1024w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_5280-300x225.jpg 300w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_5280-768x576.jpg 768w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_5280-320x240.jpg 320w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_5280-620x465.jpg 620w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_5280-920x690.jpg 920w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_5280-1220x915.jpg 1220w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_5280-1620x1215.jpg 1620w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_5280-1920x1440.jpg 1920w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_5280-630x473.jpg 630w" sizes="(max-width: 630px) 100vw, 630px" /><p id="caption-attachment-3333212" class="wp-caption-text">It deals with low-light very well, even when there are lots of competing light sources</p></div>
+<div id="attachment_3333213" style="width: 640px" class="wp-caption alignnone"><img aria-describedby="caption-attachment-3333213" class="lazyload blur-up size-large wp-image-3333213" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0008-768x1024.jpg" alt="iPhone X Photo sample" width="630" height="840" data-sizes="auto" data-srcset="https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0008-768x1024.jpg 768w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0008-225x300.jpg 225w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0008-240x320.jpg 240w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0008-465x620.jpg 465w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0008-690x920.jpg 690w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0008-915x1220.jpg 915w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0008-1215x1620.jpg 1215w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0008-1440x1920.jpg 1440w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0008-375x500.jpg 375w" sizes="(max-width: 630px) 100vw, 630px" /><p id="caption-attachment-3333213" class="wp-caption-text">The improved Portrait mode and telephoto lens takes great shots in bad light</p></div>
+<div id="attachment_3333215" style="width: 640px" class="wp-caption alignnone"><img aria-describedby="caption-attachment-3333215" class="lazyload blur-up size-large wp-image-3333215" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_7048-1024x674.jpg" alt="iPhone X Photo sample" width="630" height="415" data-sizes="auto" data-srcset="https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_7048-1024x674.jpg 1024w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_7048-300x197.jpg 300w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_7048-768x505.jpg 768w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_7048-320x211.jpg 320w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_7048-620x408.jpg 620w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_7048-920x605.jpg 920w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_7048-1220x803.jpg 1220w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_7048-1620x1066.jpg 1620w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_7048-1920x1264.jpg 1920w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_7048-630x415.jpg 630w" sizes="(max-width: 630px) 100vw, 630px" /><p id="caption-attachment-3333215" class="wp-caption-text">Even in the dark there&#8217;s plenty of detail</p></div>
+<div id="attachment_3333210" style="width: 640px" class="wp-caption alignnone"><img aria-describedby="caption-attachment-3333210" class="lazyload blur-up size-large wp-image-3333210" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0330-1024x768.jpg" alt="iPhone X Photo sample" width="630" height="473" data-sizes="auto" data-srcset="https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0330-1024x768.jpg 1024w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0330-300x225.jpg 300w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0330-768x576.jpg 768w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0330-320x240.jpg 320w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0330-620x465.jpg 620w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0330-920x690.jpg 920w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0330-1220x915.jpg 1220w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0330-1620x1215.jpg 1620w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0330-1920x1440.jpg 1920w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0330-630x473.jpg 630w" sizes="(max-width: 630px) 100vw, 630px" /><p id="caption-attachment-3333210" class="wp-caption-text">The range between the light and dark colours is excellent</p></div>
+<p><img class="lazyload blur-up alignnone size-large wp-image-3333214" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0086-1024x768.jpg" alt="" width="630" height="473" data-sizes="auto" data-srcset="https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0086-1024x768.jpg 1024w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0086-300x225.jpg 300w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0086-768x576.jpg 768w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0086-320x240.jpg 320w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0086-620x465.jpg 620w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0086-920x690.jpg 920w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0086-1220x915.jpg 1220w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0086-1620x1215.jpg 1620w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0086-1920x1440.jpg 1920w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_0086-630x473.jpg 630w" sizes="(max-width: 630px) 100vw, 630px" /></p>
+<div id="attachment_3333216" style="width: 640px" class="wp-caption alignnone"><img aria-describedby="caption-attachment-3333216" class="lazyload blur-up size-large wp-image-3333216" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_8010-1024x768.jpg" alt="iPhone X Photo sample" width="630" height="473" data-sizes="auto" data-srcset="https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_8010-1024x768.jpg 1024w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_8010-300x225.jpg 300w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_8010-768x576.jpg 768w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_8010-320x240.jpg 320w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_8010-620x465.jpg 620w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_8010-920x690.jpg 920w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_8010-1220x915.jpg 1220w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_8010-1620x1215.jpg 1620w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_8010-1920x1440.jpg 1920w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_8010-630x473.jpg 630w" sizes="(max-width: 630px) 100vw, 630px" /><p id="caption-attachment-3333216" class="wp-caption-text">2x zoom in the dark still holds detail</p></div>
+<p><img class="lazyload blur-up alignnone size-large wp-image-3333223" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_1056-1024x768.jpg" alt="iPhone X Photo sample" width="630" height="473" data-sizes="auto" data-srcset="https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_1056-1024x768.jpg 1024w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_1056-300x225.jpg 300w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_1056-768x576.jpg 768w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_1056-320x240.jpg 320w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_1056-620x465.jpg 620w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_1056-920x690.jpg 920w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_1056-1220x915.jpg 1220w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_1056-1620x1215.jpg 1620w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_1056-1920x1440.jpg 1920w, https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/11/IMG_1056-630x473.jpg 630w" sizes="(max-width: 630px) 100vw, 630px" /></p>
+<p><span style="font-weight: 400">What’s less impressive is the range of lighting options that add extra effects to these photos. ‘Contour light’ is the best, this adds some minor flecks of light around the cheekbones and eyes, but the two ‘Stage light’ options very much live up to the ‘beta’ tag. These cut out the person, and replace the background with black. The idea is great, but the results have an amateur feel. There’s no blend where the shadow starts and the colour finishes, and the actual cut-out often isn’t accurate.</span></p>
+<p><span style="font-weight: 400">Video can be captured in 240fps slo-mo at 1080p, and 4K at a ridiculously smooth 60fps. The iPhone X and iPhone 8 were the first devices to support the latter, but that&#8217;s now matched by Android phones. To utilise 4K 60, you’ll have to switch to Apple’s new HEVC format; there don’t appear to be many compatibility issues that I’ve noticed.</span></p>
+<p><strong>Related: <a href="https://www.trustedreviews.com/reviews/iphone-11">iPhone 11 review</a></strong></p>
+<p><span style="font-weight: 400">With the switch to the True Depth camera on the front, Apple has now enabled Portrait mode through the 7-megapixel selfie camera too. This was a big feature during the iPhone X announcement, but in reality it’s poor. I’ve yet to take a Portrait selfie with this phone that doesn’t blur out the wrong part, or leave me with weird-looking hair. Hopefully, this feature improves with future software updates.</span></p>
+
+
+	
+	
+				
+						<div class="post-author-card">
+
+	    <div class="post-author-card-image author-image--mobile">
+        <img
+            alt="Max Parker"
+            data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2018/09/Max-150x150.jpg"
+            class="post-author--img lazyload"
+            height="145"
+            width="145">
+    </div>
+	
+	<div class="post-author-card-details">
+		<div class="post-author-card-top">
+							<div class="post-author-card-name">
+					<span itemprop="author">
+						<a class="url fn n" href="https://www.trustedreviews.com/author/max-parker" name="A post from Max Parker">
+							<span class="author vcard">Max Parker</span>
+						</a>
+					</span>
+				</div>
+				<ul class="post-author-card-links author-links--desktop">
+                <li>
+            <a rel="me noopener" href="https://twitter.com/parkermax" target="_blank" class="icon-social-twitter" name="Visit the authors Twitter">
+                <span class="visuallyhidden">Contact via Twitter</span>
+            </a>
+        </li>
+                        <li>
+            <a rel="me noopener" href="https://www.instagram.com/mxprker/" target="_blank" class="icon-social-instagram" name="Visit the authors Instagram">
+                <span class="visuallyhidden">Contact via Instagram</span>
+            </a>
+        </li>
+    </ul>					</div>
+		
+					<div class="post-author-card-job-title">
+				<small id="author-job-title" class="role">Deputy and mobile editor</small>
+			</div>
+		
+		<div class="post-author-card-lower">
+							<div class="post-author-card-description">
+											Max Parker is the Deputy Editor for Trusted Reviews and Recombu. He also directly manages Trusted Reviews’ mobile, wearables and tablet sections. Max joined Trusted Reviews as a features writer in 201&hellip;
+									</div>
+			
+			    <div class="post-author-card-image author-image--desktop">
+        <img
+            alt="Max Parker"
+            data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2018/09/Max-150x150.jpg"
+            class="post-author--img lazyload"
+            height="145"
+            width="145">
+    </div>
+
+		</div>
+
+		<ul class="post-author-card-links author-links--mobile">
+                <li>
+            <a rel="me noopener" href="https://twitter.com/parkermax" target="_blank" class="icon-social-twitter" name="Visit the authors Twitter">
+                <span class="visuallyhidden">Contact via Twitter</span>
+            </a>
+        </li>
+                        <li>
+            <a rel="me noopener" href="https://www.instagram.com/mxprker/" target="_blank" class="icon-social-instagram" name="Visit the authors Instagram">
+                <span class="visuallyhidden">Contact via Instagram</span>
+            </a>
+        </li>
+    </ul>
+	</div>
+</div>			
+	
+
+
+					</div>
+
+						<div class="multi-pagination">
+			<a class='btn btn--prev' href="https://www.trustedreviews.com/reviews/iphone-x-performance-software" rel="prev" name="Previous page">
+			Previous<br/>
+			<span class="btn__page-title">Performance and Software Review</span>
+			<span class="icon icon-arrow-left"></span>
+		</a>
+				<a class='btn btn--next' href="https://www.trustedreviews.com/reviews/iphone-x-battery-life-verdict" rel="next" name="Next page">
+			Next<br/>
+			<span class="btn__page-title">Battery life and Verdict Review</span>
+			<span class="icon icon-arrow-right"></span>
+		</a>
+	</div>
+					
+																													<div class="OUTBRAIN outbrain-below-article-thumbnails" data-src="https://www.trustedreviews.com/reviews/iphone-x-camera" data-widget-id="AR_1"></div>
+											</div>
+			</div>
+
+			
+		</div>
+	</article>
+			
+	</div>
+
+			<div class="parallax-wrapper parallax-wrapper--footer sticky-anchor"></div>
+
+<footer id="footer" role="contentinfo" class="footer sticky-anchor">
+	<div class="footer__row">
+		<nav class="footer__col footer__col--content">
+			<ul id="menu-3" class="footer-menu footer-menu--plain">
+			<li id="menu-item-3927554" class="menu-item menu-item-type-custom menu-item-object-custom no-icon menu-item-3927554">
+			<a href="/archive"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon" name="Visit our no-icon page">
+				<span class="menu-icon-item icon-no-icon">
+					Content archive
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-2651360" class="menu-item menu-item-type-custom menu-item-object-custom first-menu-item no-icon menu-item-2651360">
+			<a href="/info/about-us-2-3982927"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon" name="Visit our no-icon page">
+				<span class="menu-icon-item icon-no-icon">
+					About us / contact us
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-3580003" class="menu-item menu-item-type-custom menu-item-object-custom no-icon menu-item-3580003">
+			<a href="https://www.trustedreviews.com/info/trusted-reviews-ethics-policy-3521647"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon" name="Visit our no-icon page">
+				<span class="menu-icon-item icon-no-icon">
+					Editorial independence
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-3550819" class="menu-item menu-item-type-custom menu-item-object-custom no-icon menu-item-3550819">
+			<a href="https://www.incisivemedia.com/terms-conditions/"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon" name="Visit our no-icon page">
+				<span class="menu-icon-item icon-no-icon">
+					Labelling of commercial content
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-3550821" class="menu-item menu-item-type-custom menu-item-object-custom no-icon menu-item-3550821">
+			<a href="https://www.ipso.co.uk/editors-code-of-practice/"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon" name="Visit our no-icon page">
+				<span class="menu-icon-item icon-no-icon">
+					IPSO Editors' Code of Practice
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-2651363" class="menu-item menu-item-type-custom menu-item-object-custom no-icon menu-item-2651363">
+			<a href="https://www.trustedreviews.com/info/privacy-policy-4108741"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon" name="Visit our no-icon page">
+				<span class="menu-icon-item icon-no-icon">
+					Privacy & cookie policy
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-2651362" class="menu-item menu-item-type-custom menu-item-object-custom no-icon menu-item-2651362">
+			<a href="https://www.incisivemedia.com/terms-conditions/"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon" name="Visit our no-icon page">
+				<span class="menu-icon-item icon-no-icon">
+					Terms & Conditions
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-3550818" class="menu-item menu-item-type-custom menu-item-object-custom no-icon menu-item-3550818">
+			<a href="https://www.incisivemedia.com/terms-conditions/"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon" name="Visit our no-icon page">
+				<span class="menu-icon-item icon-no-icon">
+					Third party advertising policy
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-3550823" class="menu-item menu-item-type-custom menu-item-object-custom no-icon menu-item-3550823">
+			<a href="https://comps.trustedreviews.com/?_ga=2.81825043.400893545.1535971409-812703703.1535551482"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon" name="Visit our no-icon page">
+				<span class="menu-icon-item icon-no-icon">
+					Competitions
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-2651361" class="menu-item menu-item-type-custom menu-item-object-custom no-icon menu-item-2651361">
+			<a href="https://www.trustedreviews.com/info/about-us-2-3982927"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon" name="Visit our no-icon page">
+				<span class="menu-icon-item icon-no-icon">
+					Advertise with us
+				</span>
+			</a>
+		</li>
+	</ul>		</nav>
+		<nav class="footer__col footer__col--sidebar">
+			<div class="ad-logos">
+	<a href="https://www.iabuk.com/goldstandard" class="footer__iab" target="_blank" rel="noopener" name="IAB Gold Standard">
+		<img 
+			src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" 
+			data-src="/wp-content/themes/simba-theme/assets/images/iab_logo.png" 
+			class="lazyload blur-up" 
+			alt="IAB Gold Standard" 
+			width="100%" />
+	</a>
+	<a href="https://jicwebs.org/standards/brand-safety/" class="footer__jic" target="_blank" rel="noopener" name="JIC WEBS Brand Safety">
+		<img 
+			src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" 
+			data-src="/wp-content/themes/simba-theme/assets/images/jic_webs_logo.jpg" 
+			class="lazyload blur-up" 
+			alt="JIC WEBS Brand Safety" 
+			width="100%" />
+	</a>
+</div>
+			
+		</nav>
+
+		<div class="footer-legal">
+			<a itemprop="url" href="" title="" name="">
+			<img
+				itemprop="logo"
+				src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+				data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2018/10/tr-logo-large-1.png"
+				class="lazyload blur-up footer-logo"
+				alt=""
+				data-pin-nopin="true">
+		</a>
+		<sub>&copy; Copyright TrustedReviews Limited. 172 Drury Lane, London, WC2B 5QR. All rights reserved.</sub>
+	<a href="https://www.ipso.co.uk/what-we-do/" class="footer__ipso" target="_blank" rel="noopener" name="Visit the IPSO website">
+		<img
+			src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+			data-src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/ipso-dark.png"
+			class="lazyload blur-up"
+			alt="IPSO Regulated"
+			width="100%" />
+	</a>
+</div>
+		<ul id="menu-8" class="footer-menu footer-menu--icons">
+			<li id="menu-item-2651357" class="menu-item menu-item-type-custom menu-item-object-custom menu-icon-facebook menu-item-2651357">
+			<a href="https://www.facebook.com/pages/TrustedReviews/38275114220?ref=ts"   target="_blank" rel="noopener" class="menu-icon-item icon-social-facebook" name="Visit our facebook page">
+				<span class="menu-icon-item icon-facebook">
+					Facebook
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-2651356" class="menu-item menu-item-type-custom menu-item-object-custom first-menu-item menu-icon-twitter menu-item-2651356">
+			<a href="https://twitter.com/trustedreviews"   target="_blank" rel="noopener" class="menu-icon-item icon-social-twitter" name="Visit our twitter page">
+				<span class="menu-icon-item icon-twitter">
+					Twitter
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-2651358" class="menu-item menu-item-type-custom menu-item-object-custom menu-icon-youtube menu-item-2651358">
+			<a href="https://www.youtube.com/user/TrustedReviews"   target="_blank" rel="noopener" class="menu-icon-item icon-social-youtube" name="Visit our youtube page">
+				<span class="menu-icon-item icon-youtube">
+					YouTube
+				</span>
+			</a>
+		</li>
+	</ul>	</div>
+</footer>
+		<div id="venatus__dfpad-overlay__1" class="ipc-advert venatus-placeholder ipc-advert-dfpad-overlay ipc-advert-identifier-all">
+					<div class="vm-placement" data-id="5f5a1427ebf74d173c00cdd1" style="display:none"></div>
+				</div><!-- Venatus placement IDs not found for slot "gumgum". --><!-- Venatus placement IDs not found for slot "sovrn". --><!-- Venatus placement IDs not found for slot "instream". -->		<script type="text/javascript">
+			(function() {
+				/* Include required screen size functions right here */
+				var getDisplayWidth=function(){var e=0;if(typeof window.innerWidth!="undefined"){e=window.innerWidth}else if(typeof document.documentElement!="undefined"&&typeof document.documentElement.clientWidth!="undefined"&&document.documentElement.clientWidth!=0){e=document.documentElement.clientWidth}else{e=document.getElementsByTagName("body")[0].clientWidth}return Number(e)};
+				var getWindowSize = getDisplayWidth();
+				window.ipcTags = window.ipcTags || {};
+				/* Pageskin targeting stuff */
+				if(getWindowSize >= 1350) {
+					window.ipcTags['pageskin'] = 'yes';
+				} else {
+					window.ipcTags['pageskin'] = 'no';
+				}
+
+				window.ipcTags['dfp_config']['required_tags'].push('pageskin');
+			})();
+		</script>
+					<script>
+			  window.addEventListener('load', function () {
+				setTimeout(function () {
+				  var s = document.createElement('script'), el = document.getElementsByTagName('script')[ 0 ];
+				  s.async = true;
+				  s.src = 'https://www.trustedreviews.com/wp-content/plugins/keystone-apester/dist/js/apester.min.js?ver=1.1.14';
+				  el.parentNode.insertBefore(s, el);
+				}, 1400)
+			  })
+			</script>
+			<script type='text/javascript'>
+			(function(d,w){
+				var s = d.createElement('script');
+				w.lazySizesConfig = {
+				    expFactor: 1,
+				    init: false,
+				};
+				s.async = true;
+				s.onload = function() {
+					var init = function() {
+						setTimeout(function (){
+							lazySizes.init();
+						}, 50);
+					}
+
+					if(document.readyState === 'loading') {
+						document.addEventListener('DOMContentLoaded', init);
+					} else {
+						init();
+					}
+				};
+				s.src = 'https://www.trustedreviews.com/wp-content/plugins/keystone-images/assets/js/sizes.js?ver=0.0.1';
+				d.body.appendChild(s);
+			})(document,window);
+		</script><script type='text/javascript' defer src='https://www.trustedreviews.com/wp-content/themes/kiara-child-theme/dist/js/main.min.js?ver=1617848143' id='keystone-premium-js'></script>
+<script type='text/javascript' id='keystone_newsletter_-script-js-extra'>
+/* <![CDATA[ */
+var keystone_newsletter = {"form_url":"https:\/\/ti-media.slgnt.eu\/renderers\/xml.ashx?ID=nLUnUG6KOH7JVtNut_mqr75CzNVCbo18YbNezlFBjHW9kR%2B98Rc6r4aNyu50jiA2PGhvykw1_OhnBfMVr5&NEWSLETTER_CODE=YTR-X&BRAND_CODE=YTR&SOURCE_CODE=RRL"};
+/* ]]> */
+</script>
+<script type='text/javascript' defer src='https://www.trustedreviews.com/wp-content/plugins/keystone-newsletter/widget/../dist/js/newsletter.min.js?ver=1617848142' id='keystone_newsletter_-script-js'></script>
+<script type='text/javascript' id='ajax-script-js-extra'>
+/* <![CDATA[ */
+var frontEndAjax = {"ajaxurl":"https:\/\/www.trustedreviews.com\/wp-admin\/admin-ajax.php","nonce":"7b2c77b22f"};
+/* ]]> */
+</script>
+<script type='text/javascript' defer src='https://www.trustedreviews.com/wp-content/plugins/keystone-newsletter/widget/../dist/js/recaptcha.min.js?ver=1617848142' id='ajax-script-js'></script>
+<script type='text/javascript' defer src='https://www.trustedreviews.com/wp-includes/js/wp-embed.min.js?ver=NS41LjE' id='wp-embed-js'></script>
+<script type='text/javascript'>
+                        window.addEventListener( 'load', function() {
+                            setTimeout( function() {
+                                var s = document.createElement('script');
+                                        s.async = true;
+                                        s.src = 'https://cdn.onesignal.com/sdks/OneSignalSDK.js?ver=NS41LjE';
+                                        document.body.appendChild(s);
+                            }, 2000 );
+                        } );
+                    </script>		<script>
+		 window.addEventListener( 'load', function() {
+			 setTimeout( function() {
+				 var s = document.createElement("script"), el = document.getElementsByTagName("script")[0];
+				  s.async = true;
+				  s.src = 'https://www.dwin2.com/pub.277673.min.js';
+				  el.parentNode.insertBefore(s, el);
+				}, 1800 );
+		 } );
+		</script>
+	
+	
+</div><!-- /wrapper -->
+
+	<div class="textwidget custom-html-widget"><script>
+	window.addEventListener('load', function(){
+			setTimeout(function(){
+				navigation.resizeNav();
+			},2000);
+		});
+</script></div>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"NRJS-08117103be773d6204a","applicationID":"572418288","transactionName":"NF0HMEQDWhJQBkJfDg0XJAdCC1sPHhZfWAYPXQ==","queueTime":0,"applicationTime":906,"atts":"GBoQRgwZSU0TBBQMGh5F","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+
+</html>
